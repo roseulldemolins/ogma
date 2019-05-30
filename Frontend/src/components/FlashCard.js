@@ -7,12 +7,28 @@ class FlashCard extends React.Component {
   constructor() {
     super();
     this.state = {
-      isFlipped: false
+      isFlipped: false,
+      randomIndex: 0,
+      changeCard: false
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.handleFlipClick = this.handleFlipClick.bind(this);
+    this.handleNewCardClick = this.handleNewCardClick.bind(this);
+
   }
 
-  handleClick(event) {
+  handleNewCardClick(event) {
+    event.preventDefault();
+    this.pickCard();
+
+  }
+
+  pickCard(){
+    this.setState({ changeCard: true });
+    const random = Math.floor(Math.random()*Math.floor(this.props.questions.length))
+    this.setState({ randomIndex: random })
+  }
+
+  handleFlipClick(event) {
     event.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
   }
@@ -23,18 +39,24 @@ class FlashCard extends React.Component {
           <div>Loading</div>
         )
       }
+    if (this.state.changeCard == false) {
+      this.pickCard()
+    }
     return (
+      <div>
       <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
         <div id='front' key="front">
-          {this.props.questions[0].question_text}
-          <button onClick={this.handleClick}>Click to flip</button>
+          {this.props.questions[this.state.randomIndex].question_text}
+          <button onClick={this.handleFlipClick}>Click to flip</button>
         </div>
 
         <div id='back' key="back">
-          {this.props.questions[0].answer_text}
-          <button onClick={this.handleClick}>Click to flip</button>
+          {this.props.questions[this.state.randomIndex].answer_text}
+          <button onClick={this.handleFlipClick}>Click to flip</button>
         </div>
       </ReactCardFlip>
+      <button onClick={this.handleNewCardClick}>New card</button>
+      </div>
     )
   }
 }
