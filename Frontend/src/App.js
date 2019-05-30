@@ -8,7 +8,6 @@ class App extends React.Component {
 
   componentDidMount(){
     this.props.getQuestions();
-    console.log("component did mount")
   };
 
   render(){
