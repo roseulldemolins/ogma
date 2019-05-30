@@ -1,35 +1,36 @@
-#front {
+#front, #back {
   background-image:
     linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px),
     repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px));
   box-shadow: 1px 1px 3px rgba(0,0,0,.25);
   height: 300px;
   width: 500px;
-  margin: auto;
   position: absolute;
-  transform: translate(50%, 50%);
   font-family: 'Coming Soon', cursive;
   font-size: 25px;
-  line-height: 50px;
-}
+  margin-left: 35%;
+  margin-top: 90px;
 
-#back {
-  background-image:
-    linear-gradient(180deg, white 3rem, #F0A4A4 calc(3rem), #F0A4A4 calc(3rem + 2px), transparent 1px),
-    repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #DDD 1px, #DDD calc(1.5rem + 1px));
-  box-shadow: 1px 1px 3px rgba(0,0,0,.25);
-  height: 300px;
-  width: 500px;
-  margin: auto;
-  position: absolute;
-  transform: translate(50%, 50%);
-  font-family: 'Coming Soon', cursive;
-  font-size: 25px;
-  line-height: 50px;
 }
 
 p{
-  padding-top: 67px;
   padding-left: 10px;
   padding-right: 10px;
+  text-align: center;
+}
+
+.subtopic{
+ margin-top: 20px;
+ font-weight: bold;
+ font-size: 30px;
+}
+
+.text{
+    margin-top: 25px;
+    line-height: 45px;
+}
+
+.flipcard{
+  text-align: center;
+  align-items: center;
 }

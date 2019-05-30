@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import FlashCardContainer from './containers/FlashCardContainer.js';
 import { connect } from 'react-redux';
@@ -13,7 +12,9 @@ class App extends React.Component {
   render(){
     return (
       <div>
-      <h1>Ogma</h1>
+      <h1>Ogma
+        <i id='book-icon' className="fab fa-leanpub"></i>
+      </h1>
       <FlashCardContainer
       randomIndex = {Math.floor(Math.random()*Math.floor(this.props.questionsData.length))}
       />

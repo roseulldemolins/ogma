@@ -22,7 +22,7 @@ class FlashCard extends React.Component {
 
   handleFlipClick(event) {
     if (this.state.randomIndex === null) {
-      this.setState({randomIndex: event.target.id}, () => {
+      this.setState({randomIndex: event.target.value}, () => {
         this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
       })
     } else {
@@ -40,17 +40,17 @@ class FlashCard extends React.Component {
       return (
         <div className="flipcard">
         <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
-          <div id='front' key="front">
-            <p>{this.props.questions[index].question_text}</p>
-            <button id={index} onClick={this.handleFlipClick}>Click to flip</button>
+          <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
+            <p className='subtopic'>{this.props.questions[index].sub_topic}</p>
+            <p className='text'>{this.props.questions[index].question_text}</p>
           </div>
 
-          <div id='back' key="back">
-            <p>{this.props.questions[index].answer_text}</p>
-            <button id={index} onClick={this.handleFlipClick}>Click to flip</button>
+          <div id='back' key="back" value={index} onClick={this.handleFlipClick}>
+            <p className='subtopic'>{this.props.questions[index].sub_topic}</p>
+            <p className='text'>{this.props.questions[index].answer_text}</p>
           </div>
         </ReactCardFlip>
-        <button onClick={this.handleNewCardClick}>New card</button>
+        <button className="black ui button" onClick={this.handleNewCardClick}>New card</button>
         </div>
       )
   }
