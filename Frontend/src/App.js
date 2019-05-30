@@ -14,7 +14,9 @@ class App extends React.Component {
     return (
       <div>
       <h1>Ogma</h1>
-      <FlashCardContainer />
+      <FlashCardContainer
+      randomIndex = {Math.floor(Math.random()*Math.floor(this.props.questionsData.length))}
+      />
       </div>
     );
   };
@@ -37,4 +39,10 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App)
+const mapStateToProps = (state) => {
+  return {
+  questionsData: state
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
