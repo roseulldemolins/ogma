@@ -1,7 +1,15 @@
 import React from 'react';
 import './App.css';
 import FlashCardContainer from './containers/FlashCardContainer.js';
+import HomeContainer from './containers/HomeContainer.js';
+import PairsContainer from './containers/PairsContainer.js';
+import StudyNotesContainer from './containers/StudyNotesContainer.js';
+import NavBar from './components/NavBar.js';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+
+import './components/NavBar.css';
 
 class App extends React.Component {
 
@@ -11,14 +19,20 @@ class App extends React.Component {
 
   render(){
     return (
-      <div>
-      <h1>Ogma
-        <i id='book-icon' className="fab fa-leanpub"></i>
-      </h1>
-      <FlashCardContainer
-      randomIndex = {Math.floor(Math.random()*Math.floor(this.props.questionsData.length))}
-      />
-      </div>
+      <Router>
+        <React.Fragment>
+          <NavBar />
+        <Switch>
+          <Route path="/home" component={HomeContainer} />
+          <Route
+          path="/flash-cards"
+          render={(props) => <FlashCardContainer {...props} randomIndex = {Math.floor(Math.random()*Math.floor(this.props.questionsData.length))}/>}
+          />
+          <Route path="/pairs" component={PairsContainer} />
+          <Route path="/study-notes" component={StudyNotesContainer} />
+        </Switch>
+        </React.Fragment>
+      </Router>
     );
   };
 };
