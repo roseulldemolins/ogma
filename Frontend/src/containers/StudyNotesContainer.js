@@ -1,4 +1,5 @@
 import React from 'react';
+import StudyNotes from '../components/StudyNotes';
 
 const StudyNotesContainer = () => {
   return(
