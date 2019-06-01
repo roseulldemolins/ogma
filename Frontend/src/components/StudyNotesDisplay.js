@@ -11,7 +11,6 @@ const StudyNotesDisplay = (props) => {
     />
   })
 
-  console.log('in s-notes display, logging props:', props);
   return(
     <div>
     {listOfNotes}

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import FlashCard from '../components/FlashCard.js'
 import { connect } from 'react-redux';
 

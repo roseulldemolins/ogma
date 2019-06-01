@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 
 class StudyNotesForm extends Component {
 
@@ -18,7 +19,10 @@ class StudyNotesForm extends Component {
       type: "study_note",
       topic: "coding" // TODO: hard-coded topic needs updated when multi-topics are introduced
     }
-    this.props.addNewStudyNote(newStudyNote);
+    // nxt line WORKS, but updates state only, & not the db...
+    // this.props.addNewStudyNote(newStudyNote); // replace this line to restore functionality !!!
+    // this alt is meant to update db, then state, using thunk:
+    this.props.addNew(newStudyNote);
   }
 
   handleTextChange(evt) {
@@ -40,4 +44,26 @@ class StudyNotesForm extends Component {
 
 }
 
-export default StudyNotesForm;
+// trial & error here (also see above):
+// delete the invocation of this code to restore functionality
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addNew(newStudyNote) {
+      dispatch(() => {
+        fetch('http://localhost:3000/questions')
+        .then(res => res.json())
+        .then(newStudyNote => {
+          dispatch({
+            type: 'ADD_NEW_STUDY_NOTE',
+            newStudyNote: newStudyNote
+          });
+        })
+      })
+    }
+  }
+}
+
+// old:
+// export default StudyNotesForm;
+// new:
+export default connect(null, mapDispatchToProps)(StudyNotesForm);
