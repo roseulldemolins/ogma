@@ -10,6 +10,16 @@ db.questions.insertMany([
   topic:"coding"
 },
 {
+  study_note_text:"Test Study Note - rhubarb, rhubarb",
+  type:"study_note",
+  topic:"coding"
+},
+{
+  study_note_text:"Test Study Note - blah, blah, blah",
+  type:"study_note",
+  topic:"coding"
+},
+{
   study_note_text:"Note to self - should this really be a big <ul>?",
   type:"study_note",
   topic:"coding"
