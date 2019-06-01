@@ -1,9 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const StudyNotesForm = () => {
-  return(
-    <h1>Study Notes Form Component</h1>
-  )
+class StudyNotesForm extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      placeholder: null
+    }
+    // bind funcs here
+  }
+
+  render() {
+    return (
+      <div id='study-notes-form-container'>
+        <h1>Ogma Study Notes</h1>
+
+        
+      </div>
+    )
+  }
+
 }
 
 export default StudyNotesForm;

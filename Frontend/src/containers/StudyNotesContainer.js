@@ -12,9 +12,10 @@ const mapDispatchToProps = (dispatch) => ({
   addNewStudyNote(newStudyNote) {
     dispatch({
       type: 'ADD_NEW_STUDY_NOTE',
-      newStudyNote
+      newStudyNote: newStudyNote
     })
   }
 })
 
+// export default connect(mapStateToProps)(StudyNotes)
 export default connect(mapStateToProps, mapDispatchToProps)(StudyNotes)

@@ -1,8 +1,11 @@
 import React from 'react';
 
-const StudyNote = () => {
+const StudyNote = (props) => {
+  console.log('in single note, logging props', props);
   return(
-    <h1>(Individual) Study Note Component</h1>
+    <div id='study-note-card'>
+    {props.noteItem.study_note_text}
+    </div>
   )
 }
 

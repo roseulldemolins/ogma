@@ -4,7 +4,7 @@ import StudyNotesDisplay from './StudyNotesDisplay';
 
 const StudyNotes = (props) => {
 
-  console.log('in s-notes, logging props.questions', props.questions);
+  console.log('*** in s-notes, logging props', props);
 
   const studyNoteList = [];
 
@@ -20,7 +20,7 @@ const StudyNotes = (props) => {
 
   return (
     <div id='study-notes'>
-    <StudyNotesForm addNewStudyNote={props.addNewStudyNote()}/>
+    <StudyNotesForm addNewStudyNote={props.addNewStudyNote}/>
     <StudyNotesDisplay studyNoteList={studyNoteList}/>
     </div>
   );
