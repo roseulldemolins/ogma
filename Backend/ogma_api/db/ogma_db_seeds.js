@@ -5,6 +5,21 @@ db.dropDatabase();
 db.questions.insertMany([
 
 {
+  study_note_text:"Note to self - add more study notes to test db",
+  type:"study_note",
+  topic:"coding"
+},
+{
+  study_note_text:"Note to self - should this really be a big <ul>?",
+  type:"study_note",
+  topic:"coding"
+},
+{
+  study_note_text:"Note to self - do these study notes need any other fields?",
+  type:"study_note",
+  topic:"coding"
+},
+{
   question_text:"What does TDD stand for?",
   answer_text:"Test Driven Development",
   sub_topic:"Programming",
