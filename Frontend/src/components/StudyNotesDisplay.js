@@ -1,10 +1,20 @@
 import React from 'react';
+import StudyNote from './StudyNote';
 
 const StudyNotesDisplay = (props) => {
-  console.log('in notes display, logging props:', props);
+
+  const listOfNotes = props.studyNoteList.map((noteItem, i) => {
+    return <StudyNote
+    noteItem={noteItem}
+    key={i}
+    index={i}
+    />
+  })
+
+  console.log('in s-notes display, logging props:', props);
   return(
     <div>
-    <h1>Study Notes Display Component</h1>
+    {listOfNotes}
     </div>
   )
 }

@@ -4,18 +4,17 @@ import StudyNotesDisplay from './StudyNotesDisplay';
 
 const StudyNotes = (props) => {
 
-  console.log(props.questions);
+  console.log('in s-notes, logging props.questions', props.questions);
 
   const studyNoteList = [];
 
   for (var i = 0; i < props.questions.length; i++) {
-    console.log(props.questions[i].type);
-    if (props.questions[i].type == 'q_and_a') {
+    if (props.questions[i].type == 'study_note') {
       studyNoteList.push(props.questions[i])
     }
   }
 
-  console.log(studyNoteList);
+  console.log('in s-notes, logging s-note list', studyNoteList);
 
   // const studyNoteList = props.questions.filter((question) => {question.type == "study_note"});
 
