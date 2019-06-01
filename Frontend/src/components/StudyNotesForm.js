@@ -54,7 +54,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(() => {
         fetch('http://localhost:3000/questions', {
           method: 'post',
-          body: newStudyNote
+          body: JSON.stringify(newStudyNote),
+          headers: { 'Content-Type': 'application/json' }
         })
         .then(res => res.json())
         .then(newStudyNote => {
