@@ -22,6 +22,7 @@ class StudyNotesForm extends Component {
     // nxt line WORKS, but updates state only, & not the db...
     // this.props.addNewStudyNote(newStudyNote); // replace this line to restore functionality !!!
     // this alt is meant to update db, then state, using thunk:
+    console.log('handling submit, logging newStudyNote', newStudyNote);
     this.props.addNew(newStudyNote);
   }
 
@@ -49,8 +50,12 @@ class StudyNotesForm extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     addNew(newStudyNote) {
+      console.log('in return, logging newStudyNote', newStudyNote);
       dispatch(() => {
-        fetch('http://localhost:3000/questions')
+        fetch('http://localhost:3000/questions', {
+          method: 'post',
+          body: newStudyNote
+        })
         .then(res => res.json())
         .then(newStudyNote => {
           dispatch({
