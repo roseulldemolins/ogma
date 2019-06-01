@@ -14,17 +14,17 @@ class MongoHelper {
       return collection.find().toArray();
     });
   }
-//
-//   static create(coll, payload) {
-//     // Connect using the connection string
-//     return MongoClient.connect(
-//       HOST,
-//       { useNewUrlParser: true }
-//     ).then(client => {
-//       const collection = client.db(DB_NAME).collection(coll);
-//       return collection.insertOne(payload);
-//     });
-//   }
+
+  static create(coll, payload) {
+    // Add one new question to the database
+    return MongoClient.connect(
+      HOST,
+      { useNewUrlParser: true }
+    ).then(client => {
+      const collection = client.db(DB_NAME).collection(coll);
+      return collection.insertOne(payload);
+    });
+  }
 //
 //   static delete(coll, id) {
 //     // Connect using the connection string

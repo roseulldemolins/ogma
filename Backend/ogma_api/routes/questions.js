@@ -2,20 +2,20 @@ var express = require("express");
 var router = express.Router();
 const MongoHelper = require("../db/mongo_helper.js");
 
-/* GET posts listing. */
+/* GET questions listing. */
 router.get("/", function(req, res) {
   MongoHelper.get("questions").then(results => {
     res.status(200).json(results);
   });
 });
 
-// /* Create a new posts */
-// router.post("/", function(req, res) {
-//   MongoHelper.create("posts", req.body).then(results => {
-//     res.status(201).json("New post created");
-//   });
-// });
-//
+/* Create a new question */
+router.post("/", function(req, res) {
+  MongoHelper.create("questions", req.body).then(results => {
+    res.status(201).json("New question created");
+  });
+});
+
 // /* Update a posts */
 // router.put("/:id", function(req, res) {
 //   MongoHelper.update("posts", req.params.id, req.body).then(results => {
