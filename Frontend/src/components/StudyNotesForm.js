@@ -8,7 +8,7 @@ class StudyNotesForm extends Component {
       inputtedText: ""
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
   }
 
   handleFormSubmit(evt) {
@@ -16,13 +16,13 @@ class StudyNotesForm extends Component {
     const newStudyNote = {
       study_note_text: this.state.inputtedText,
       type: "study_note",
-      topic: "coding" // TODO: hard coded topic needs updated when multi-topics are introduced
+      topic: "coding" // TODO: hard-coded topic needs updated when multi-topics are introduced
     }
     this.props.addNewStudyNote(newStudyNote);
   }
 
-  handleTextChange() {
-
+  handleTextChange(evt) {
+    this.setState({inputtedText: evt.target.value});
   }
 
   render() {
