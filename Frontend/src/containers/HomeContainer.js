@@ -4,7 +4,7 @@ import './HomeContainer.css';
 const HomeContainer = () => {
   return(
     <div id='home-page'>
-    <h1>Ogma home page</h1>
+    <h1 id='ogma-home'>Ogma</h1>
     </div>
   )
 }
