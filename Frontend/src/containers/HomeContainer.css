@@ -3,8 +3,21 @@ h1{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  
 
+
+}
+
+#ogma-home-header{
+  font-size: 70px;
+}
+
+#ogma-home-paragraph{
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: 'Uncial Antiqua', cursive;
 }
 
 #home-page{
