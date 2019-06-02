@@ -50,7 +50,7 @@ class FlashCard extends React.Component {
             <p className='text'>{this.props.questions[index].answer_text}</p>
           </div>
         </ReactCardFlip>
-        <button className="black ui button" onClick={this.handleNewCardClick}>New card</button>
+        <button id='black-ui-button' className="black ui button" onClick={this.handleNewCardClick}>New card</button>
         </div>
       )
   }

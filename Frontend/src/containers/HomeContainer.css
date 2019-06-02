@@ -1,0 +1,19 @@
+h1{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+#home-page{
+  background-image: url('/public/images/gargoyle.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+
+
+
+}
