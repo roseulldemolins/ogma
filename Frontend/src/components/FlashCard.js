@@ -38,6 +38,7 @@ class FlashCard extends React.Component {
       }
     const index = this.state.randomIndex || Math.floor(Math.random()*Math.floor(this.props.questions.length))
       return (
+        <div id='flash-card-container'>
         <div className="flipcard">
         <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
           <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
@@ -51,6 +52,7 @@ class FlashCard extends React.Component {
           </div>
         </ReactCardFlip>
         <button id='black-ui-button' className="black ui button" onClick={this.handleNewCardClick}>New card</button>
+        </div>
         </div>
       )
   }

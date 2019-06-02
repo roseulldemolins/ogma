@@ -30,6 +30,12 @@ p{
     line-height: 45px;
 }
 
+#flash-card-container{
+  background-color: #6E4A63;
+  width: 100vw;
+  height: 100vh;
+}
+
 .flipcard{
   text-align: center;
   align-items: center;
@@ -37,9 +43,10 @@ p{
   left: 40%;
   top: 50%;
   transform: translate(-50%, -50%);
+  
 }
 #black-ui-button{
   position:relative;
   left:35%;
-  
+
 }
