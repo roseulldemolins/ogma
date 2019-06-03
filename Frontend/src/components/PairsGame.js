@@ -98,7 +98,7 @@ class PairsGame extends Component {
                 cardNumber={cardNumber}
                 isFlipped={this.state.isFlipped[index]}
                 handleClick={this.handleClick}
-                questions={this.props.questions}
+                qAndA={this.props.QAndA}
               />
             )
           }
