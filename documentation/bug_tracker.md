@@ -11,3 +11,4 @@ Ref. No. | Bug Description | Resolution | Date Reported
 5 | No content showing below NavBar | Rearranged router | 31/056/2019
 6 | New items not appearing in DB | Update DB _as well as_ state/store | 01/06/2019
 7 | Blank study notes can be added | unresolved | 02/06/2019
+8 | Flashcards sometimes show blank | unresolved | 03/06/2019
