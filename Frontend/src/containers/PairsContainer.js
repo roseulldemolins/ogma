@@ -22,16 +22,16 @@ var getRandomElements = function(onlyQuestions) {
 }
 
 
-const makeAnswerArray = (array,index) => {
-  const answerArray = array.map(question => ({
+const makeAnswerArray = (array) => {
+  const answerArray = array.map((question, index) => ({
     text: question.answer_text,
     matchingID: index
   }))
   return answerArray
 }
 
-const makeQuestionArray = (array,index) => {
-  const questionArray = array.map(question => ({
+const makeQuestionArray = (array) => {
+  const questionArray = array.map((question, index) => ({
     text: question.question_text,
     matchingID: index
   }))

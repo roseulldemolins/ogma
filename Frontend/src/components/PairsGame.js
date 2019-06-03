@@ -6,38 +6,24 @@ import { connect } from 'react-redux';
 
 class PairsGame extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isFlipped: Array(16).fill(false),
-      // shuffledCard: PairsGame.duplicateCard().sort(() => Math.random() - 0.5),
-      shuffledCard: PairsGame.makeNewArray(),
+      shuffledCard: this.makeNewArray(),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1,
-    };
+    }
     this.handleClick = this.handleClick.bind(this)
   }
-
-  static duplicateCard = () => {
-    return [0,1,2,3,4,5,6,7].reduce((preValue, current, index, array) => {
-      return preValue.concat([current, current])
-    },[]);
-  };
-
-  static makeNewArray = () => {
+  makeNewArray (props) {
     const newArray = [];
     for (var i = 0; i < this.props.QAndA.length; i++) {
-    newArray.push(this.props.QAndA[i].matchingID)
+      newArray.push(this.props.QAndA[i].matchingID)
+    }
+    return newArray
   }
-}
 
-  const makeAnswerArray = (array,index) => {
-    const answerArray = array.map(question => ({
-      text: question.answer_text,
-      matchingID: index
-    }))
-    return answerArray
-  }
 
   handleClick = event => {
     event.preventDefault();
@@ -89,7 +75,7 @@ class PairsGame extends Component {
   restartGame = () => {
     this.setState({
       isFlipped: Array(16).fill(false),
-      shuffledCard: PairsGame.duplicateCard().sort(() => Math.random() - 0.5),
+      shuffledCard: this.makeNewArray(this.props),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1
@@ -101,20 +87,21 @@ class PairsGame extends Component {
   };
 
   render() {
+    console.log(this.state)
     return (
      <div>
        <PairsHeader restartGame={this.restartGame} />
        { this.isGameOver() ? <PairsGameOver restartGame={this.restartGame} /> :
        <div className="grid-container">
           {
-            this.state.shuffledCard.map((cardNumber, index) =>
+            this.state.shuffledCard.map((matchingID, index) =>
               <PairsCard
                 key={index}
                 id={index}
-                cardNumber={cardNumber}
+                cardNumber={matchingID}
                 isFlipped={this.state.isFlipped[index]}
                 handleClick={this.handleClick}
-                qAndA={this.props.QAndA}
+                QAndA={this.props.QAndA.text}
               />
             )
           }
@@ -123,13 +110,6 @@ class PairsGame extends Component {
      </div>
     );
   }
-
 }
 
-const mapStateToProps = (state) => {
-  return {
-    questions: state
-  }
-}
-
-export default connect(mapStateToProps)(PairsGame)
+export default PairsGame
