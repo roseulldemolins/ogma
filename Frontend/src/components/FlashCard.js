@@ -12,14 +12,14 @@ class FlashCard extends React.Component {
     };
     this.handleFlipClick = this.handleFlipClick.bind(this);
     this.handleNewCardClick = this.handleNewCardClick.bind(this);
-
   }
 
   handleNewCardClick(event) {
     event.preventDefault();
     this.setState({
       isFlipped: false,
-      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questions.length))})
+      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
+    })
   }
 
   handleFlipClick(event) {
@@ -30,28 +30,27 @@ class FlashCard extends React.Component {
     } else {
       this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
     }
-  }
+  };
 
   render() {
-    if (!this.props.questions.length) {
+    if (!this.props.questionList.length) {
         return (
           <div>Loading</div>
         )
       }
     const index = this.state.randomIndex || this.props.randomIndex
-    console.log('in render, logging isFlipped:', this.state.isFlipped);
       return (
         <div id='flash-card-container'>
         <div className="flipcard">
         <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
           <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
-            <p className='subtopic'>{this.props.questions[index].sub_topic}</p>
-            <p className='text'>{this.props.questions[index].question_text}</p>
+            <p className='subtopic'>{this.props.questionList[index].sub_topic}</p>
+            <p className='text'>{this.props.questionList[index].question_text}</p>
           </div>
 
           <div id='back' key="back" value={index} onClick={this.handleFlipClick}>
-            <p className='subtopic'>{this.props.questions[index].sub_topic}</p>
-            <p className='text'>{this.props.questions[index].answer_text}</p>
+            <p className='subtopic'>{this.props.questionList[index].sub_topic}</p>
+            <p className='text'>{this.props.questionList[index].answer_text}</p>
           </div>
         </ReactCardFlip>
         <button id='black-ui-button' className="black ui button" onClick={this.handleNewCardClick}>New card</button>
