@@ -9,7 +9,8 @@ class PairsGame extends Component {
     super(props);
     this.state = {
       isFlipped: Array(16).fill(false),
-      shuffledCard: PairsGame.duplicateCard().sort(() => Math.random() - 0.5),
+      // shuffledCard: PairsGame.duplicateCard().sort(() => Math.random() - 0.5),
+      shuffledCard: PairsGame.makeNewArray(),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1,
@@ -22,6 +23,21 @@ class PairsGame extends Component {
       return preValue.concat([current, current])
     },[]);
   };
+
+  static makeNewArray = () => {
+    const newArray = [];
+    for (var i = 0; i < this.props.QAndA.length; i++) {
+    newArray.push(this.props.QAndA[i].matchingID)
+  }
+}
+
+  const makeAnswerArray = (array,index) => {
+    const answerArray = array.map(question => ({
+      text: question.answer_text,
+      matchingID: index
+    }))
+    return answerArray
+  }
 
   handleClick = event => {
     event.preventDefault();
