@@ -7,8 +7,8 @@ const questionsReducer = (state = [], action) => {
     case 'ADD_NEW_STUDY_NOTE':
       return [...state, action.newStudyNote]
       case 'DELETE_NOTE':
-      console.log(action.index);
-      return [...state.splice(action.index, 1)]
+      console.log('action.index in the reducer: ', action.id);
+      return [...state.slice(0, action.id), ...state.slice(action.id + 1)]
     default:
       return state
   }
