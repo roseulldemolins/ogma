@@ -7,8 +7,7 @@ const filterQuestionsData = (state) => {
   const onlyQuestions = state.filter((question) => {
     return question.type === "q_and_a";
   });
-  console.log(onlyQuestions);
-  return onlyQuestions
+  return getRandomElements(onlyQuestions)
 }
 
 var getRandomElements = function(onlyQuestions) {
@@ -16,16 +15,29 @@ var getRandomElements = function(onlyQuestions) {
     for (var i = 0; i < 8; i++) {
         result.push(onlyQuestions[Math.floor(Math.random()*onlyQuestions.length)]);
     }
-    return result;
+    const answerArray = makeAnswerArray(result);
+    const questionArray = makeQuestionArray(result);
+    const merge = answerArray.concat(questionArray)
+    console.log(merge.sort(() => Math.random() - 0.5))
+    return answerArray.concat(questionArray)
 }
 
-// const answerArray = array.map((answer_text, index) => {
-//   return
-// })
-//
-// const questionArray = array.map((question_text, index) => {
-//   return
-// })
+
+const makeAnswerArray = (array) => {
+  const answerArray = array.map(question => ({
+    text: question.answer_text,
+    id: question._id
+  }))
+  return answerArray
+}
+
+const makeQuestionArray = (array) => {
+  const questionArray = array.map(question => ({
+    text: question.question_text,
+    id: question._id
+  }))
+  return questionArray
+}
 
 const mapStateToProps = (state) => {
   return {
