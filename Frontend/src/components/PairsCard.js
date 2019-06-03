@@ -10,8 +10,7 @@ return(
 
     </button>
 
-    <button id={props.id} className={`card card-back ${props.cardNumber !== -1 ? "" : "hide-card"}`} onClick={props.handleClick} key="back">
-      { props.cardNumber }
+    <button id={props.id} className={`card card-back ${props.cardNumber !== -1 ? "" : "hide-card"}`} onClick={props.handleClick} key="back">{props.cardNumber}
     </button>
   </ReactCardFlip>
 )
