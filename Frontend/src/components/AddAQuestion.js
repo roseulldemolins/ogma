@@ -36,7 +36,8 @@ class AddAQuestion extends Component {
 
     render () {
       return(
-        <form onSubmit={this.handleFormSubmit.bind(this)}>
+        <form className = "ui form" onSubmit={this.handleFormSubmit.bind(this)}>
+          <div className = "three wide field">
           <label htmlFor='question'>Question:</label>
           <input
             type='text'
@@ -53,7 +54,8 @@ class AddAQuestion extends Component {
             value={this.state.answer}
             onChange={this.handleInputChange}
           />
-          <input type='submit' value='Add' />
+          <input className = "black ui button" type='submit' value='Add' /> 
+          </div>
         </form>
       )
     }

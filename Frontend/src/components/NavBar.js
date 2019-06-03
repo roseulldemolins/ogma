@@ -24,6 +24,10 @@ const NavBar = () => (
       <Link to="/study-notes">Study Notes</Link>
     </li>
 
+    <li>
+      <Link to="/question-bank">Question Bank</Link>
+    </li>
+
   </ul>
   </nav>
   </div>

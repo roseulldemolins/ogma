@@ -20,4 +20,13 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps)(QuestionBank)
+const QuestionBankContainer = () => {
+  return(
+    <>
+    <AddATopic/>
+    <AddAQuestion/>
+    </>
+  )
+}
+
+export default connect(mapDispatchToProps)(QuestionBankContainer)

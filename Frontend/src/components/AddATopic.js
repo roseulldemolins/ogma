@@ -33,8 +33,9 @@ class AddATopic extends Component {
 
     render () {
       return(
-        <form onSubmit={this.handleFormSubmit.bind(this)}>
-          <label htmlFor='topic'>Question:</label>
+        <form className = "ui form" onSubmit={this.handleFormSubmit.bind(this)}>
+          <div className = 'three wide field'>
+          <label htmlFor='topic'>Topic:</label>
           <input
             type='text'
             name='topic'
@@ -42,7 +43,8 @@ class AddATopic extends Component {
             value={this.state.topic}
             onChange={this.handleInputChange}
           />
-          <input type='submit' value='Add' />
+          </div>
+          <input className="black ui button" type='submit' value='Add' />
         </form>
       )
     }

@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 
 const PairsCard = (props) => {
 
-  console.log(props);
-
 return(
   <ReactCardFlip isFlipped={props.isFlipped} flipSpeedBackToFront={1} flipSpeedFrontToBack={1} >
     <button id={props.id} className={`card card-front ${props.cardNumber !== -1 ? "" : "hide-card"}`} onClick={props.handleClick} key="front">

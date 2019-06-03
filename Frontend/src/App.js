@@ -4,6 +4,7 @@ import FlashCardContainer from './containers/FlashCardContainer.js';
 import HomeContainer from './containers/HomeContainer.js';
 import PairsContainer from './containers/PairsContainer.js';
 import StudyNotesContainer from './containers/StudyNotesContainer.js';
+import QuestionBankContainer from './containers/QuestionBankContainer.js';
 import NavBar from './components/NavBar.js';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -30,6 +31,7 @@ class App extends React.Component {
           />
           <Route path="/pairs" component={PairsContainer} />
           <Route path="/study-notes" component={StudyNotesContainer} />
+          <Route path="/question-bank" component={QuestionBankContainer} />
         </Switch>
         </React.Fragment>
       </Router>
