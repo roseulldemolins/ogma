@@ -17,7 +17,9 @@ class FlashCard extends React.Component {
 
   handleNewCardClick(event) {
     event.preventDefault();
-    this.setState({ randomIndex: Math.floor(Math.random()*Math.floor(this.props.questions.length))})
+    this.setState({
+      isFlipped: false,
+      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questions.length))})
   }
 
   handleFlipClick(event) {
@@ -37,6 +39,7 @@ class FlashCard extends React.Component {
         )
       }
     const index = this.state.randomIndex || this.props.randomIndex
+    console.log('in render, logging isFlipped:', this.state.isFlipped);
       return (
         <div id='flash-card-container'>
         <div className="flipcard">
