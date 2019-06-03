@@ -36,7 +36,7 @@ class FlashCard extends React.Component {
           <div>Loading</div>
         )
       }
-    const index = this.state.randomIndex || Math.floor(Math.random()*Math.floor(this.props.questions.length))
+    const index = this.state.randomIndex || this.props.randomIndex
       return (
         <div id='flash-card-container'>
         <div className="flipcard">
