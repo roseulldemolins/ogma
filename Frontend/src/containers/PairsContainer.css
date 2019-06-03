@@ -5,8 +5,8 @@ body {
 .grid-container {
   display: grid;
   grid-gap: 1px;
-  grid-template-columns: auto auto auto auto;
-  padding: 10px 0px 10px 150px;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  padding: 10px 0px 10px 0px;
 }
 
 .grid-header-container {
@@ -17,23 +17,12 @@ body {
 }
 
 .grid-item {
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 0px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
 }
 
-.justify-left {
-  text-align: left
-}
-
-.justify-end {
-  text-align: right;
-}
-
-.justify-center {
-  text-align: center;
-}
 
 .timer {
-  color: #5168e9;
   font-size: 20px;
   font-weight: bold;
 }
@@ -42,7 +31,6 @@ body {
   width: 15em;
   height: 3em;
   color: white;
-  background-color: #5168e9;
   border: 0;
 }
 
@@ -59,7 +47,6 @@ body {
   color: white;
   font-size: 15px;
   border-radius: 15px;
-  margin: 20%;
 }
 
 .hide-card {
