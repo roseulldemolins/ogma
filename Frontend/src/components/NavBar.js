@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './NavBar.css';
 
 const NavBar = () => (
   <header>
@@ -8,8 +9,8 @@ const NavBar = () => (
 
 
     <h4 className='title'>
-      <Link to="/home"><span id='ogma'>Ogma</span></Link>
-      <i id='book-icon' className="fab fa-leanpub"></i>
+      <Link to="/home"><span id='ogma'>Ogma</span><i id='book-icon' className="fab fa-leanpub"></i></Link>
+
     </h4>
     <ul>
     <li>

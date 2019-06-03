@@ -2,12 +2,13 @@ var express = require("express");
 var router = express.Router();
 const MongoHelper = require("../db/mongo_helper.js");
 
-/* GET posts listing. */
+/* GET questions listing. */
 router.get("/", function(req, res) {
   MongoHelper.get("questions").then(results => {
     res.status(200).json(results);
   });
 });
+
 
 /* Create a new question/topic */
 router.post("/", function(req, res) {
@@ -29,6 +30,7 @@ router.delete("/:id", function(req, res) {
     res.status(204).json("Question removed");
   });
 });
+
 
 // /* Add new comment */
 // router.post("/:post_id/comments", function(req, res) {

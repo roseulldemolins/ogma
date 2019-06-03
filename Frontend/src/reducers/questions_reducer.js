@@ -4,6 +4,8 @@ const questionsReducer = (state = [], action) => {
       return [...state, ...action.questionsData]
     case 'ADD_QUESTION':
       return [action.question, ...state]
+    case 'ADD_NEW_STUDY_NOTE':
+      return [...state, action.newStudyNote]
     default:
       return state
   }

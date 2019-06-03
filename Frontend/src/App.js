@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import FlashCardContainer from './containers/FlashCardContainer.js';
 import HomeContainer from './containers/HomeContainer.js';
 import PairsContainer from './containers/PairsContainer.js';
@@ -10,7 +9,11 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
-import './components/NavBar.css';
+// import './components/NavBar.css';
+import './App.css';
+
+
+
 
 class App extends React.Component {
 

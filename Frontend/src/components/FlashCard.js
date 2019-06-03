@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import ReactCardFlip from 'react-card-flip';
 import './FlashCard.css'
 
@@ -38,6 +38,7 @@ class FlashCard extends React.Component {
       }
     const index = this.state.randomIndex || Math.floor(Math.random()*Math.floor(this.props.questions.length))
       return (
+        <div id='flash-card-container'>
         <div className="flipcard">
         <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
           <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
@@ -50,7 +51,8 @@ class FlashCard extends React.Component {
             <p className='text'>{this.props.questions[index].answer_text}</p>
           </div>
         </ReactCardFlip>
-        <button className="black ui button" onClick={this.handleNewCardClick}>New card</button>
+        <button id='black-ui-button' className="black ui button" onClick={this.handleNewCardClick}>New card</button>
+        </div>
         </div>
       )
   }
