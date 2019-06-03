@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px 0px 10px 150px;
+}
+
+.grid-header-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #e09f70;
+  padding: 10px;
+}
+
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.justify-left {
+  text-align: left
+}
+
+.justify-end {
+  text-align: right;
+}
+
+.justify-center {
+  text-align: center;
+}
+
+.timer {
+  color: #5168e9;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.restart-button {
+  width: 15em;
+  height: 3em;
+  color: white;
+  background-color: #5168e9;
+  border: 0;
+}
+
+.game-status-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(24, 21, 16);
+  font-weight: bold;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  background-color: #e09f70;
+  color: white;
+  font-size: 15px;
+  border-radius: 15px;
+  margin: 20%;
+}
+
+.hide-card {
+  visibility: hidden;
+}
+
+.card-front {
+  background-color: #999999;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  background-image: url('../images/card.png');
+  background-size: 200px 300px;
+}
+
+.card-back {
+  font-weight: bold;
+}
