@@ -19,10 +19,6 @@ class StudyNotesForm extends Component {
       type: "study_note",
       topic: "coding" // TODO: hard-coded topic needs updated when multi-topics are introduced
     }
-    // nxt line WORKS, but updates state only, & not the db...
-    // this.props.addNewStudyNote(newStudyNote); // replace this line to restore functionality !!!
-    // this alt is meant to update db, then state, using thunk:
-    console.log('handling submit, logging newStudyNote', newStudyNote);
     this.props.addNew(newStudyNote);
   }
 
@@ -45,12 +41,9 @@ class StudyNotesForm extends Component {
 
 }
 
-// trial & error here (also see above):
-// delete the invocation of this code to restore functionality
 const mapDispatchToProps = (dispatch) => {
   return {
     addNew(newStudyNote) {
-      console.log('in return, logging newStudyNote', newStudyNote);
       dispatch(() => {
         fetch('http://localhost:3000/questions', {
           method: 'post',
@@ -58,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
           headers: { 'Content-Type': 'application/json' }
         })
         .then(res => res.json())
-        .then(newStudyNote => {
+        .then(response => {
           dispatch({
             type: 'ADD_NEW_STUDY_NOTE',
             newStudyNote: newStudyNote
@@ -69,7 +62,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-// old:
-// export default StudyNotesForm;
-// new:
 export default connect(null, mapDispatchToProps)(StudyNotesForm);
