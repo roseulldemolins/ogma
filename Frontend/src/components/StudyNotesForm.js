@@ -29,7 +29,6 @@ class StudyNotesForm extends Component {
   render() {
     return (
       <div id='study-notes-form-container'>
-        <h1>Ogma Study Notes</h1>
         <form onSubmit={this.handleFormSubmit} autoComplete='off'>
           <textarea onChange={this.handleTextChange} rows="4" cols="50">Type a new study note here.</textarea>
           <input type='submit' value='Submit Note' />

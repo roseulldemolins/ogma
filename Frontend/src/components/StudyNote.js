@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './StudyNote.css'
 
 const StudyNote = (props) => {
 
@@ -10,10 +11,10 @@ const handleDelete = () => {
 
 
   return(
-    <div id='study-note-card'>
-    {props.noteItem.study_note_text}
+    <li href="#" className='study-note-card'>
+    <p className='study-card-paragraph'>{props.noteItem.study_note_text}</p>
     <button onClick={handleDelete} id='study-note-del'>Delete Note</button>
-    </div>
+    </li>
   )
 }
 
