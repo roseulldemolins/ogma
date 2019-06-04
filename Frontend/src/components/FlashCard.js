@@ -42,7 +42,7 @@ class FlashCard extends React.Component {
       return (
         <div id='flash-card-container'>
         <div className="flipcard">
-        <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
+        <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical" flipSpeedBackToFront={0.20} flipSpeedFrontToBack={0.20}>
           <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
             <p className='subtopic'>{this.props.questionList[index].sub_topic}</p>
             <p className='text'>{this.props.questionList[index].question_text}</p>
