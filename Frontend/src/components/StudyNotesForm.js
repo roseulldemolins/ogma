@@ -51,6 +51,7 @@ const mapDispatchToProps = (dispatch) => {
         })
         .then(res => res.json())
         .then(response => {
+          newStudyNote._id = response;
           dispatch({
             type: 'ADD_NEW_STUDY_NOTE',
             newStudyNote: newStudyNote

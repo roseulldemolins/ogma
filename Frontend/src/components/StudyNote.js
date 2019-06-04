@@ -5,7 +5,6 @@ import './StudyNote.css'
 const StudyNote = (props) => {
 
 const handleDelete = () => {
-  console.log('delete button clicked on index: ', props.noteItem._id);
   props.deleteNote(props.noteItem._id);
 }
 
@@ -21,13 +20,11 @@ const handleDelete = () => {
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteNote(id){
-      console.log('delete action dispatched with index: ', id);
       dispatch(() => {
-        fetch(`http://localhost:3000/questions/${id}`, {
+        fetch(`http://localhost:3000/questions/${id}`, {
           method: 'delete'
         })
-        .then(res => res.json())
-        .then(response =>{
+        .then(() =>{
           dispatch({
             type: 'DELETE_NOTE',
             id: id

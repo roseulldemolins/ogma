@@ -13,7 +13,7 @@ router.get("/", function(req, res) {
 /* Create a new question/topic */
 router.post("/", function(req, res) {
   MongoHelper.create("questions", req.body).then(results => {
-    res.status(201).json("New question created");
+    res.status(201).json(results.insertedId);
   });
 });
 
