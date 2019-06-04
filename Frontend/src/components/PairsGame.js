@@ -88,7 +88,7 @@ class PairsGame extends Component {
 
   render() {
     return (
-     <div>
+     <div className="game">
        <PairsHeader restartGame={this.restartGame} />
        { this.isGameOver() ? <PairsGameOver restartGame={this.restartGame} /> :
        <div className="grid-container">
