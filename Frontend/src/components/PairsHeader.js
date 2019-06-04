@@ -5,7 +5,7 @@ const PairsHeader = ({ restartGame }) => (
     <div className="justify-left timer"></div>
     <div className="justify-center game-status-text"></div>
     <div className="justify-end">
-      <button onClick={restartGame} className="black ui button">Restart Game</button>
+      <button onClick={restartGame} className="button">Restart Game</button>
     </div>
   </div>
 );
