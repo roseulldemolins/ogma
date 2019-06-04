@@ -14,3 +14,4 @@ Ref. No. | Bug Description | Resolution | Date Reported
 8 | Flashcards sometimes show blank | Filtered out non Q&A cards | 03/06/2019
 9 | Restart pairs not retrieving new cards | unresolved | 04/06/2019
 10 | Pairs game throws error on refresh | unresolved | 04/06/2019
+11 | Study note delete crashes app | unresolved | 04/06/2019
