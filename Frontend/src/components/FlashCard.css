@@ -8,7 +8,7 @@
   width: 500px;
   font-family: 'Coming Soon', cursive;
   font-size: 25px;
-  margin-left: 35%;
+  margin-left: 75%;
   margin-top: 90px;
 
 }
@@ -40,10 +40,10 @@ p{
   text-align: center;
   align-items: center;
   position: absolute;
-  left: 40%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  
+
 }
 #black-ui-button{
   position:relative;

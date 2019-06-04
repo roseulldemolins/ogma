@@ -33,7 +33,6 @@ class StudyNotesForm extends Component {
         <form onSubmit={this.handleFormSubmit} autoComplete='off'>
           <textarea onChange={this.handleTextChange} rows="4" cols="50">Type a new study note here.</textarea>
           <input type='submit' value='Submit Note' />
-          <h4 id="list-divider"className="ui horizontal divider header">Study Notes</h4>
         </form>
       </div>
     )
