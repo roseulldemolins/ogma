@@ -10,18 +10,24 @@ const filterQuestionsData = (state) => {
   return getRandomElements(onlyQuestions)
 }
 
-var getRandomElements = function(onlyQuestions) {
-    var result = [];
-    for (var i = 0; i < 8; i++) {
-        result.push(onlyQuestions[Math.floor(Math.random()*onlyQuestions.length)]);
+let getRandomElements = function(onlyQuestions) {
+  if (!onlyQuestions.length) {
+      return;
     }
-    const answerArray = makeAnswerArray(result);
-    const questionArray = makeQuestionArray(result);
-    const merge = answerArray.concat(questionArray)
-    console.log(merge.sort(() => Math.random() - 0.5));
-    return merge.sort(() => Math.random() - 0.5)
+  let results = [];
+  while (results.length < 8) {
+    let newNumber = Math.floor(Math.random()*onlyQuestions.length);
+    console.log(newNumber);
+    if (results.indexOf(onlyQuestions[newNumber]) < 0) {
+      results.push(onlyQuestions[newNumber]);
+    }
+  }
+  const answerArray = makeAnswerArray(results);
+  console.log(answerArray);
+  const questionArray = makeQuestionArray(results);
+  const merge = answerArray.concat(questionArray)
+  return merge.sort(() => Math.random() - 0.5)
 }
-
 
 const makeAnswerArray = (array) => {
   const answerArray = array.map((question, index) => ({
