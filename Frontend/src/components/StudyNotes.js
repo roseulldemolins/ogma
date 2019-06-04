@@ -1,6 +1,7 @@
 import React from 'react';
 import StudyNotesForm from './StudyNotesForm';
 import StudyNotesDisplay from './StudyNotesDisplay';
+import './StudyNote.css'
 
 const StudyNotes = (props) => {
 
@@ -17,7 +18,7 @@ const StudyNotes = (props) => {
   });
 
   return (
-    <div id='study-notes'>
+    <div id='study-notes-container'>
     <StudyNotesForm addNewStudyNote={props.addNewStudyNote}/>
     <StudyNotesDisplay studyNoteList={studyNoteList}/>
     </div>

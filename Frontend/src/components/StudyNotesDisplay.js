@@ -1,5 +1,6 @@
 import React from 'react';
 import StudyNote from './StudyNote';
+import './StudyNote.css'
 
 const StudyNotesDisplay = (props) => {
 
@@ -12,9 +13,9 @@ const StudyNotesDisplay = (props) => {
   })
 
   return(
-    <div>
+    <ul id='study-note-list'>
     {listOfNotes}
-    </div>
+    </ul>
   )
 }
 
