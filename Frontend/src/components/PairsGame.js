@@ -87,7 +87,6 @@ class PairsGame extends Component {
   };
 
   render() {
-    console.log(this.state)
     return (
      <div>
        <PairsHeader restartGame={this.restartGame} />
@@ -101,7 +100,7 @@ class PairsGame extends Component {
                 cardNumber={matchingID}
                 isFlipped={this.state.isFlipped[index]}
                 handleClick={this.handleClick}
-                QAndA={this.props.QAndA.text}
+                QAndA={this.props.QAndA[index].text}
               />
             )
           }

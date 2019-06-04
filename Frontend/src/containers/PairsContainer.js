@@ -18,6 +18,7 @@ var getRandomElements = function(onlyQuestions) {
     const answerArray = makeAnswerArray(result);
     const questionArray = makeQuestionArray(result);
     const merge = answerArray.concat(questionArray)
+    console.log(merge.sort(() => Math.random() - 0.5));
     return merge.sort(() => Math.random() - 0.5)
 }
 
