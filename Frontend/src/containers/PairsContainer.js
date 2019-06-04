@@ -1,121 +1,54 @@
 import React, { Component } from 'react';
-import PairsHeader from '../components/PairsHeader';
-import PairsCard from '../components/PairsCard';
-import PairsGameOver from '../components/PairsGameOver';
+import PairsGame from '../components/PairsGame';
 import './PairsContainer.css';
 import { connect } from 'react-redux';
 
-class PairsContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFlipped: Array(16).fill(false),
-      shuffledCard: PairsContainer.duplicateCard().sort(() => Math.random() - 0.5),
-      clickCount: 1,
-      prevSelectedCard: -1,
-      prevCardId: -1,
-    };
-    this.handleClick = this.handleClick.bind(this)
-  }
+const filterQuestionsData = (state) => {
+  const onlyQuestions = state.filter((question) => {
+    return question.type === "q_and_a";
+  });
+  return getRandomElements(onlyQuestions)
+}
 
-  static duplicateCard = () => {
-    return [0,1,2,3,4,5,6,7].reduce((preValue, current, index, array) => {
-      return preValue.concat([current, current])
-    },[]);
-  };
-
-  handleClick = event => {
-    event.preventDefault();
-    const cardId = event.target.id;
-    const newFlipps = this.state.isFlipped.slice();
-    this.setState({
-        prevSelectedCard: this.state.shuffledCard[cardId],
-        prevCardId: cardId
-    });
-
-    if (newFlipps[cardId] === false) {
-      newFlipps[cardId] = !newFlipps[cardId];
-      this.setState(prevState => ({
-        isFlipped: newFlipps,
-        clickCount: this.state.clickCount + 1
-      }));
-
-      if (this.state.clickCount === 2) {
-        this.setState({ clickCount: 1 });
-        const prevCardId = this.state.prevCardId;
-        const newCard = this.state.shuffledCard[cardId];
-        const previousCard = this.state.prevSelectedCard;
-
-        this.isCardMatch(previousCard, newCard, prevCardId, cardId);
-      }
+let getRandomElements = function(onlyQuestions) {
+  if (!onlyQuestions.length) {
+      return;
     }
-  };
-
-  isCardMatch = (card1, card2, card1Id, card2Id) => {
-    if (card1 === card2) {
-      const hideCard = this.state.shuffledCard.slice();
-      hideCard[card1Id] = -1;
-      hideCard[card2Id] = -1;
-      setTimeout(() => {
-        this.setState(prevState => ({
-          shuffledCard: hideCard
-        }))
-      }, 1000);
-    } else {
-      const flipBack = this.state.isFlipped.slice();
-      flipBack[card1Id] = false;
-      flipBack[card2Id] = false;
-      setTimeout(() => {
-        this.setState(prevState => ({ isFlipped: flipBack }));
-      }, 1000);
+  let results = [];
+  while (results.length < 8) {
+    let newNumber = Math.floor(Math.random()*onlyQuestions.length);
+    console.log(newNumber);
+    if (results.indexOf(onlyQuestions[newNumber]) < 0) {
+      results.push(onlyQuestions[newNumber]);
     }
-  };
-
-  restartGame = () => {
-    this.setState({
-      isFlipped: Array(16).fill(false),
-      shuffledCard: PairsContainer.duplicateCard().sort(() => Math.random() - 0.5),
-      clickCount: 1,
-      prevSelectedCard: -1,
-      prevCardId: -1
-    });
-  };
-
-  isGameOver = () => {
-    return this.state.isFlipped.every((element, index, array) => element !== false);
-  };
-
-  render() {
-    console.log(this.props)
-    return (
-     <div>
-       <PairsHeader restartGame={this.restartGame} />
-       { this.isGameOver() ? <PairsGameOver restartGame={this.restartGame} /> :
-       <div className="grid-container">
-          {
-            this.state.shuffledCard.map((cardNumber, index) =>
-              <PairsCard
-                key={index}
-                id={index}
-                cardNumber={cardNumber}
-                isFlipped={this.state.isFlipped[index]}
-                handleClick={this.handleClick}
-                questions={this.props.questions}
-              />
-            )
-          }
-        </div>
-       }
-     </div>
-    );
   }
+  const answerArray = makeAnswerArray(results);
+  console.log(answerArray);
+  const questionArray = makeQuestionArray(results);
+  const merge = answerArray.concat(questionArray)
+  return merge.sort(() => Math.random() - 0.5)
+}
 
+const makeAnswerArray = (array) => {
+  const answerArray = array.map((question, index) => ({
+    text: question.answer_text,
+    matchingID: index
+  }))
+  return answerArray
+}
+
+const makeQuestionArray = (array) => {
+  const questionArray = array.map((question, index) => ({
+    text: question.question_text,
+    matchingID: index
+  }))
+  return questionArray
 }
 
 const mapStateToProps = (state) => {
   return {
-    questions: state
+    QAndA: filterQuestionsData(state)
   }
 }
 
-export default connect(mapStateToProps)(PairsContainer)
+export default connect(mapStateToProps)(PairsGame)
