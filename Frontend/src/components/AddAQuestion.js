@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import QuestionBankContainer from '../containers/QuestionBankContainer.css';
+import './AddAQuestion.css'
 
 class AddAQuestion extends Component {
   constructor(props) {

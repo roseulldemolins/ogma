@@ -1,3 +1,11 @@
 #question-bank-container{
   background-color: #b2b6bf;
 }
+
+
+.ui-cards {
+  display:inline-flex;
+  flex-direction: row;
+  margin-left: 100px;
+
+}
