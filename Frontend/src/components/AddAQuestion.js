@@ -6,26 +6,31 @@ class AddAQuestion extends Component {
   constructor(props) {
       super(props);
       this.state = {
+        subtopic: '',
         question: '',
-        answer: '',
+        answer: ''
       };
-      this.handleInputChange = this.handleInputChange.bind(this)
+      this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleFormSubmit (event) {
       event.preventDefault();
       const newQuestion = {
-        question: event.target.question.value,
-        answer: event.target.answer.value,
+        sub_topic: this.state.subtopic,
+        question_text: this.state.question,
+        answer_text: this.state.answer,
+        type: "q_and_a",
+        topic: "coding" // TODO: hard-coded topic needs updated when multi-topics are introduced
       };
-      this.props.addQuestion(newQuestion)
-      this.reset()
+      this.props.addQuestion(newQuestion);
+      this.reset();
     };
 
     reset () {
       this.setState({
+        subtopic: '',
         question: '',
-        answer: '',
+        answer: ''
       })
     }
 
@@ -76,4 +81,4 @@ class AddAQuestion extends Component {
     }
   }
 
-  export default AddAQuestion
+  export default AddAQuestion;
