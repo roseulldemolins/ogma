@@ -1,9 +1,7 @@
-
-
 #question-card-del{
 display: inline-block;
 text-align: center;
-width:295px;
+width:261px;
 color: #ffffff;
 background-color: #6E4A63;
 border: solid 1px transparent;
@@ -19,4 +17,8 @@ margin-top: 30px;
 
 #question-card-del:hover{
   background-color: #5d4355;
+}
+
+.header{
+  font-family: 'Roboto Slab', serif !important;
 }

@@ -42,9 +42,9 @@ class AddAQuestion extends Component {
 
     render () {
       return(
-        <form className = "ui form" onSubmit={this.handleFormSubmit.bind(this)}>
+        <form className = "ui form" id="form" onSubmit={this.handleFormSubmit.bind(this)}>
           <div className = "fields">
-            <div className = "field">
+            <div className = "inline field">
               <label htmlFor='subtopic'>Subtopic:</label>
               <input
                 type='text'
@@ -54,7 +54,7 @@ class AddAQuestion extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
-            <div className = "field">
+            <div className = "inline field">
               <label htmlFor='question'>Question:</label>
               <input
                 type='text'
@@ -64,7 +64,7 @@ class AddAQuestion extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
-            <div className = "field">
+            <div className = "inline field">
               <label htmlFor='answer'>Answer:</label>
               <input
                 type='text'
