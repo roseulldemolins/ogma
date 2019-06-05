@@ -74,7 +74,7 @@ class AddAQuestion extends Component {
                 onChange={this.handleInputChange}
               />
             </div>
-            <input className = "add-question-button" type='submit' value='Add' />
+            <input className = "add-question-button" aria-label="add-button" type='submit' value='Add' />
             </div>
         </form>
       )
