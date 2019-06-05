@@ -9,12 +9,16 @@ const QuestionCard = (props) => {
   }
 
   return(
-    <li href="#" className='question-card'>
-    <p className='q-card-sub-topic'>Sub Topic: {props.questionItem.sub_topic}</p>
-    <p className='q-card-q-text'>Q: {props.questionItem.question_text}</p>
-    <p className='q-card-a-text'>A: {props.questionItem.answer_text}</p>
-    <button onClick={handleDelete} id='question-card-del'>Remove Question</button>
-    </li>
+        <div className="card">
+          <div className="content">
+              <div className="header">{props.questionItem.sub_topic}</div>
+            <div className="description">
+              <p className='q-card-q-text'>Q: {props.questionItem.question_text}</p>
+              <p className='q-card-a-text'>A: {props.questionItem.answer_text}</p>
+            </div>
+          </div>
+          <button onClick={handleDelete} id='question-card-del'>Remove Question</button>
+        </div>
   )
 
 }

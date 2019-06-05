@@ -13,9 +13,9 @@ const QuestionBankDisplay = (props) => {
   })
 
   return(
-    <ul id='question-card-list'>
+      <div className="ui six cards">
     {listOfQuestions}
-    </ul>
+    </div>
   )
 }
 
