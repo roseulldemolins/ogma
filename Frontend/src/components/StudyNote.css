@@ -82,7 +82,8 @@
   -moz-transform:rotate(4deg);
   position:relative;
   top:5px;
-  background:#b2b6bf;
+  /* background:#b2b6bf; */
+  background:#dcdee2;
 }
 
 #study-note-list .study-note-card:nth-child(3n){
@@ -91,7 +92,8 @@
   -moz-transform:rotate(-3deg);
   position:relative;
   top:-5px;
-  background:#b0897b;
+  /* background:#b0897b; */
+  background:#d8a897;
 }
 #study-note-list .study-note-card:nth-child(5n){
   -o-transform:rotate(5deg);
@@ -99,7 +101,8 @@
   -moz-transform:rotate(5deg);
   position:relative;
   top:-10px;
-  background: #E09F71;
+  /* background: #E09F71; */
+  background:#ffb27c;
 }
 
 #study-note-list .study-note-card:hover, #study-note-list .study-note-card:focus{
