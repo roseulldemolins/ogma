@@ -8,12 +8,12 @@ afterEach(cleanup);
 describe("PairsCard", () => {
 
 it('should display the back of the card', () => {
-const { getByText, getByLabelText } = render(<PairsCard/>)
+const { getByLabelText } = render(<PairsCard/>)
 expect(getByLabelText("card-back")).toBeTruthy();
 });
 
 it('should display the front of the card', () => {
-const { getByText, getByLabelText } = render(<PairsCard/>)
+const { getByLabelText } = render(<PairsCard/>)
 expect(getByLabelText("card-front")).toBeTruthy();
 });
 

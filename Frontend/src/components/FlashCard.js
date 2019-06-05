@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 import ReactCardFlip from 'react-card-flip';
 import './FlashCard.css'
 
