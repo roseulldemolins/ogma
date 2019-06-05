@@ -135,13 +135,6 @@ db.questions.insertMany([
   topic:"coding"
 },
 {
-  question_text:"What's wrong with the following JS: if myVar = "x" ...?",
-  answer_text:"A single = is an assignment, not a comparison",
-  sub_topic:"Javascript",
-  type:"q_and_a",
-  topic:"coding"
-},
-{
   question_text:"What's the difference between == and ===?",
   answer_text:"Strict equality (===) requires matching data types, whereas loose equality (==) performs type conversion before comparing",
   sub_topic:"Javascript",

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import QuestionBankContainer from '../containers/QuestionBankContainer.css';
 
 class AddAQuestion extends Component {
   constructor(props) {
@@ -37,25 +38,39 @@ class AddAQuestion extends Component {
     render () {
       return(
         <form className = "ui form" onSubmit={this.handleFormSubmit.bind(this)}>
-          <div className = "three wide field">
-          <label htmlFor='question'>Question:</label>
-          <input
-            type='text'
-            name='question'
-            id='question'
-            value={this.state.question}
-            onChange={this.handleInputChange}
-          />
-          <label htmlFor='answer'>Answer:</label>
-          <input
-            type='text'
-            name='answer'
-            id='answer'
-            value={this.state.answer}
-            onChange={this.handleInputChange}
-          />
-          <input className = "black ui button" type='submit' value='Add' /> 
-          </div>
+          <div className = "fields">
+            <div className = "field">
+              <label htmlFor='subtopic'>Subtopic:</label>
+              <input
+                type='text'
+                name='subtopic'
+                id='subtopic'
+                value={this.state.subtopic}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className = "field">
+              <label htmlFor='question'>Question:</label>
+              <input
+                type='text'
+                name='question'
+                id='question'
+                value={this.state.question}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div className = "field">
+              <label htmlFor='answer'>Answer:</label>
+              <input
+                type='text'
+                name='answer'
+                id='answer'
+                value={this.state.answer}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <input className = "add-question-button" type='submit' value='Add' />
+            </div>
         </form>
       )
     }
