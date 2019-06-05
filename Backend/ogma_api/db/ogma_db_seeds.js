@@ -197,7 +197,6 @@ db.questions.insertMany([
   type:"q_and_a",
   topic:"coding"
 },
-
 {
   question_text:"What is the decimal equivalent of OxFF?",
   answer_text:"255",
