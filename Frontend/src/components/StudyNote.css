@@ -27,6 +27,12 @@
   /* make sure colors have enough contrast! */
   color: #ffffff;
   background-color: #6E4A63;
+  font-size: 14px;
+}
+
+#study-note-del:hover{
+  background-color: #5d4355;
+  outline: none;
 }
 
 
@@ -44,7 +50,7 @@
 }
 
 #study-note-list .study-note-card {
-  
+
   text-decoration:none;
   color:#000;
   background:#ffc;

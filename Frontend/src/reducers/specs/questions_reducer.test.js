@@ -92,8 +92,4 @@ describe('Reducer testing', () => {
 
 
   });
-
-  xit('should handle DELETE_NOTE', () => {
-
-  });
 })
