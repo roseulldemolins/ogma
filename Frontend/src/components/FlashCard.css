@@ -10,6 +10,8 @@
   font-size: 25px;
   margin-left: 75%;
   margin-top: 90px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  position: absolute;
 
 }
 
@@ -26,7 +28,7 @@ p{
 }
 
 .text{
-    margin-top: 25px;
+    margin-top: 30px;
     line-height: 45px;
 }
 
@@ -45,9 +47,41 @@ p{
   transform: translate(-50%, -50%);
 
 }
-#black-ui-button{
-  position:relative;
-  left:35%;
-  background-color: #6E4A63;
 
+button{
+  outline:none !important;
+}
+
+.flashcard-buttons {
+display: inline-block;
+text-align: center;
+width:150px;
+color: #ffffff;
+background-color: #6E4A63;
+border: solid 1px transparent;
+border-radius: 4px;
+padding: 0.5em 1em;
+margin-right: 50px;
+font-family: 'Roboto Slab', serif;
+font-size: 16px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+outline: none;
+margin-top: 30px;
+align: absolute;
+}
+
+.flashcard-buttons:hover{
+  background-color: #5d4355;
+}
+
+.modal-header{
+  background-color: #E09F71;
+  font-family: 'Uncial Antiqua', cursive;
+  color: #F6F8F6;
+}
+.modal-content{
+  background-color: #F6F8F6;
+  font-family: 'Roboto Slab', serif;
+  color: #6E4A63;
+  text-align: center;
 }
