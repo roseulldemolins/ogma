@@ -24,7 +24,8 @@ nav{
   background-color: #E09F71;
   font-family: 'Uncial Antiqua', cursive;
   /* opacity: 0.5; */
-  border-bottom: solid #F6F8F6 2px;
+  /* border-bottom: solid #F6F8F6 2px; */
+  width: 100% !important;
   }
 
 

@@ -11,6 +11,9 @@
   grid-template-columns: auto auto auto auto auto auto auto auto;
   position: center;
   margin-left: 10px;
+  margin-top: 50px;
+  text-align: center;
+  vertical-align: center;
 }
 
 .grid-header-container {
@@ -30,11 +33,11 @@
   font-weight: bold;
 }
 
-.restart-button {
+.restart-button{
   width: 15em;
   height: 3em;
   color: white;
-  border: 0;
+  border: 0px;
 }
 
 .game-status-text {
@@ -49,8 +52,9 @@
   color: white;
   font-size: 15px;
   border-radius: 15px;
-  margin-top: 50px;
   outline: none;
+  text-align: center;
+  vertical-align: center;
 }
 
 .hide-card {
@@ -69,25 +73,4 @@
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
   background-image: url('../images/paper.jpg');
   background-size: 175px 250px;
-}
-
-.button {
-display: inline-block;
-text-align: center;
-color: #ffffff;
-background-color: #6E4A63;
-border: solid 1px transparent;
-border-radius: 4px;
-padding: 0.5em 1em;
-margin-right: 450px;
-font-family: 'Roboto Slab', serif;
-font-size: 16px;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-outline: none;
-margin-top: 30px;
-}
-
-.button:hover{
-  background-color: #5d4355;
-  outline: none;
 }
