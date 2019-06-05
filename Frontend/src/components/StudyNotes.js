@@ -12,7 +12,7 @@ const StudyNotes = (props) => {
   //     studyNoteList.push(props.questions[i])
   //   }
   // }
-// console.log(props);
+  
   const studyNoteList = props.questions.filter((question) => {
   return question.type == "study_note"
   });

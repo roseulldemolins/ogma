@@ -3,7 +3,7 @@ const questionsReducer = (state = [], action) => {
     case 'LOAD_QUESTIONS_DATA':
       return [...state, ...action.questionsData]
     case 'ADD_QUESTION':
-      return [action.question, ...state]
+      return [action.newQuestion, ...state]
     case 'ADD_NEW_STUDY_NOTE':
       return [...state, action.newStudyNote]
     case 'DELETE_NOTE':

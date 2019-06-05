@@ -1,24 +1,20 @@
 import React from 'react';
-import AddAQuestion from '../components/AddAQuestion.js'
+import QuestionBank from '../components/QuestionBank';
 import { connect } from 'react-redux';
 
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    addQuestion: (question) => {
-      dispatch({
-        type: 'ADD_QUESTION',
-        question
-      })
-    }
+    questions: state
   }
-}
+};
 
-const QuestionBankContainer = () => {
-  return(
-    <>
-    <AddAQuestion/>
-    </>
-  )
-}
+const mapDispatchToProps = (dispatch) => ({
+  addQuestion(newQuestion) {
+    dispatch({
+      type: 'ADD_QUESTION',
+      newQuestion: newQuestion
+    })
+  }
+})
 
-export default connect(mapDispatchToProps)(QuestionBankContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionBank)
