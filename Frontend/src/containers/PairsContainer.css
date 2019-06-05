@@ -81,10 +81,10 @@ border-radius: 4px;
 padding: 0.5em 1em;
 margin-right: 450px;
 font-family: 'Roboto Slab', serif;
-font-size: 20px;
+font-size: 16px;
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 outline: none;
-margin-top: 50px;
+margin-top: 30px;
 }
 
 .button:hover{
