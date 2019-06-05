@@ -19,4 +19,4 @@ const questionsReducer = (state = [], action) => {
   }
 }
 
-export default questionsReducer
+export default questionsReducer;
