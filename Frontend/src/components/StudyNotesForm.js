@@ -31,8 +31,8 @@ class StudyNotesForm extends Component {
     return (
       <div id='study-notes-form-container'>
         <form onSubmit={this.handleFormSubmit} autoComplete='off'>
-          <textarea onChange={this.handleTextChange} rows="4" cols="50">Type a new study note here.</textarea>
-          <input type='submit' value='Submit Note' />
+          <textarea id='study-note-input' onChange={this.handleTextChange} rows="2" cols="50" placeholder='Type a new study note here...'></textarea>
+          <input id='submit-study-note' type='submit' value='Submit Note' />
         </form>
       </div>
     )

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './NavBar.css';
 
 const NavBar = () => (
+
   <header>
   <div className='container'>
   <nav>
@@ -34,6 +35,14 @@ const NavBar = () => (
   </div>
   </header>
 
+
+
 );
+
+
+
+
+
+
 
 export default NavBar;

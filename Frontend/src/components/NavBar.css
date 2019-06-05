@@ -24,7 +24,10 @@ nav{
   background-color: #E09F71;
   font-family: 'Uncial Antiqua', cursive;
   /* opacity: 0.5; */
+  border-bottom: solid white 2px;
   }
+
+
 
 .title{
   font-size: 3rem;
@@ -95,6 +98,13 @@ nav ul li a::after{
   left:0;
   transform: scaleX(0);
   transition: all .5s;
+}
+
+
+.active{
+  
+  background-color: #6E4A63;
+
 }
 
 nav ul li a::before{
