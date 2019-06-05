@@ -15,4 +15,4 @@ Ref. No. | Bug Description | Resolution | Date Reported
 9 | Pairs game uses duplicate Q's | Make unique Q array | 03/06/2019
 10 | Restart pairs not retrieving new cards | unresolved | 04/06/2019
 11 | Study note delete crashes app | Amended reducer & dispatch | 04/06/2019
-12 | Pairs game throws error on refresh | unresolved | 04/06/2019
+12 | Pairs game throws error on refresh | Added conditional to render "blank" game | 04/06/2019

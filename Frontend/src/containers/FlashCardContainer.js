@@ -7,7 +7,6 @@ const filterQuestionsData = (state) => {
   const onlyQuestions = state.filter((question) => {
     return question.type === "q_and_a";
   });
-  console.log(onlyQuestions);
   return onlyQuestions
 }
 
@@ -16,7 +15,6 @@ const generateRndIndx = (state) => {
     return question.type === "q_and_a";
   });
   const randomised = Math.floor(Math.random()*Math.floor(onlyQuestions.length));
-  console.log(randomised);
   return randomised
 }
 

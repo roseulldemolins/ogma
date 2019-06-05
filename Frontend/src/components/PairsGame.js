@@ -16,7 +16,10 @@ class PairsGame extends Component {
     }
     this.handleClick = this.handleClick.bind(this)
   }
-  makeNewArray (props) {
+  makeNewArray () {
+    if (!this.props.QAndA) {
+      return [];
+      }
     const newArray = [];
     for (var i = 0; i < this.props.QAndA.length; i++) {
       newArray.push(this.props.QAndA[i].matchingID)
@@ -75,7 +78,7 @@ class PairsGame extends Component {
   restartGame = () => {
     this.setState({
       isFlipped: Array(16).fill(false),
-      shuffledCard: this.makeNewArray(this.props),
+      shuffledCard: this.makeNewArray(),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1
