@@ -11,7 +11,6 @@
   margin-left: 75%;
   margin-top: 90px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  position: absolute;
 
 }
 
@@ -52,7 +51,7 @@ button{
   outline:none !important;
 }
 
-.flashcard-buttons {
+.flashcard-button {
 display: inline-block;
 text-align: center;
 width:150px;
@@ -67,10 +66,9 @@ font-size: 16px;
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 outline: none;
 margin-top: 30px;
-align: absolute;
 }
 
-.flashcard-buttons:hover{
+.flashcard-button:hover{
   background-color: #5d4355;
 }
 
@@ -83,5 +81,9 @@ align: absolute;
   background-color: #F6F8F6;
   font-family: 'Roboto Slab', serif;
   color: #6E4A63;
+  text-align: center;
+}
+
+.flashcard-buttons{
   text-align: center;
 }

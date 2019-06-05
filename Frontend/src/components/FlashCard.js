@@ -53,9 +53,9 @@ class FlashCard extends React.Component {
             </div>
           </ReactCardFlip>
         </div>
-        <div className="buttons">
-          <button className="flashcard-buttons" onClick={this.handleNewCardClick}>New card</button>
-          <button className="flashcard-buttons" type="button" data-toggle="modal" data-target="#flashcardsModal">Instructions</button>
+        <div className="flashcard-buttons">
+          <button className="flashcard-button" onClick={this.handleNewCardClick}>New card</button>
+          <button className="flashcard-button" type="button" data-toggle="modal" data-target="#flashcardsModal">Instructions</button>
         </div>
         <div className="modal fade" id="flashcardsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
