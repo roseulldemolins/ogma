@@ -41,14 +41,25 @@ nav{
 #ogma {
   color: #6E4A63;
   font-family: 'Uncial Antiqua', cursive;
+  position: absolute;
+  right:14rem;
 }
 
 #book-icon{
   font-size: 38px;
   padding-left: 10px;
   color: #6E4A63;
+  position: relative;
+  right:10rem;
+
 }
 
+.li-nav a{
+  color: #6E4A63;
+}
+.li-nav a:focus{
+  color: #F6F8F6;
+}
 
 
 nav ul{
@@ -59,6 +70,8 @@ nav ul li{
   list-style: none;
   transform: translateX(100rem);
   animation: slideIn .5s forwards;
+  position: relative;
+  left: 19rem;
 }
 
 nav ul li:nth-child(1){
