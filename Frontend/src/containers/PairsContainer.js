@@ -17,13 +17,11 @@ let getRandomElements = function(onlyQuestions) {
   let results = [];
   while (results.length < 8) {
     let newNumber = Math.floor(Math.random()*onlyQuestions.length);
-    console.log(newNumber);
     if (results.indexOf(onlyQuestions[newNumber]) < 0) {
       results.push(onlyQuestions[newNumber]);
     }
   }
   const answerArray = makeAnswerArray(results);
-  console.log(answerArray);
   const questionArray = makeQuestionArray(results);
   const merge = answerArray.concat(questionArray)
   return merge.sort(() => Math.random() - 0.5)
