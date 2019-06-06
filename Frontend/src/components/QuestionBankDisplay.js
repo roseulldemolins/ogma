@@ -1,6 +1,6 @@
 import React from 'react';
 import QuestionCard from './QuestionCard';
-import './QuestionCard.css'
+import './QuestionBankDisplay.css'
 
 const QuestionBankDisplay = (props) => {
 
@@ -13,7 +13,7 @@ const QuestionBankDisplay = (props) => {
   })
 
   return(
-      <div className="ui six cards">
+      <div className="ui six cards" id="cards">
     {listOfQuestions}
     </div>
   )

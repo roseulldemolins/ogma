@@ -1,6 +1,6 @@
 import React from 'react';
 import FlashCardContainer from './containers/FlashCardContainer.js';
-import HomeContainer from './containers/HomeContainer.js';
+import HomeContainer from './components/HomeContainer.js';
 import PairsContainer from './containers/PairsContainer.js';
 import StudyNotesContainer from './containers/StudyNotesContainer.js';
 import QuestionBankContainer from './containers/QuestionBankContainer.js';

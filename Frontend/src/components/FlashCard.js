@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 import ReactCardFlip from 'react-card-flip';
 import './FlashCard.css'
 
@@ -54,8 +53,8 @@ class FlashCard extends React.Component {
           </ReactCardFlip>
         </div>
         <div className="flashcard-buttons">
-          <button className="flashcard-button" onClick={this.handleNewCardClick}>New card</button>
-          <button className="flashcard-button" type="button" data-toggle="modal" data-target="#flashcardsModal">Instructions</button>
+          <button aria-label="new-button" className="flashcard-button" onClick={this.handleNewCardClick}>New card</button>
+          <button aria-label="instructions-button" className="flashcard-button" type="button" data-toggle="modal" data-target="#flashcardsModal">Instructions</button>
         </div>
         <div className="modal fade" id="flashcardsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">

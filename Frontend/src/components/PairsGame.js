@@ -16,6 +16,7 @@ class PairsGame extends Component {
     }
     this.handleClick = this.handleClick.bind(this)
   }
+
   makeNewArray () {
     if (!this.props.QAndA) {
       return [];
@@ -27,8 +28,7 @@ class PairsGame extends Component {
     return newArray
   }
 
-
-  handleClick = event => {
+  handleClick (event) {
     event.preventDefault();
     const cardId = event.target.id;
     const newFlipps = this.state.isFlipped.slice();
@@ -55,7 +55,7 @@ class PairsGame extends Component {
     }
   };
 
-  isCardMatch = (card1, card2, card1Id, card2Id) => {
+  isCardMatch (card1, card2, card1Id, card2Id) {
     if (card1 === card2) {
       const hideCard = this.state.shuffledCard.slice();
       hideCard[card1Id] = -1;
@@ -75,7 +75,7 @@ class PairsGame extends Component {
     }
   };
 
-  restartGame = () => {
+  restartGame () {
     this.setState({
       isFlipped: Array(16).fill(false),
       shuffledCard: this.makeNewArray(),

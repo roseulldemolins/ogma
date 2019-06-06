@@ -1,3 +1,13 @@
 #question-bank-container{
   background-color: #b2b6bf;
+  font-family: 'Roboto Slab', serif;
+}
+
+
+.ui-cards {
+  display:inline-flex;
+  flex-direction: row;
+  margin-left: 100px;
+  font-family: 'Roboto Slab', serif;
+
 }

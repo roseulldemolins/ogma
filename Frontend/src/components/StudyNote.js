@@ -12,7 +12,7 @@ const handleDelete = () => {
   return(
     <li href="#" className='study-note-card'>
     <p className='study-card-paragraph'>{props.noteItem.study_note_text}</p>
-    <button onClick={handleDelete} id='study-note-del'>Delete Note</button>
+    <button aria-label="delete" onClick={handleDelete} id='study-note-del'>Delete Note</button>
     </li>
   )
 }
