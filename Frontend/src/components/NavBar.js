@@ -13,20 +13,20 @@ const NavBar = () => (
       <Link to="/home"><span id='ogma'>Ogma</span><i id='book-icon' className="fab fa-leanpub"></i></Link>
 
     </h4>
-    <ul>
-    <li>
+    <ul id='nav-ul'>
+    <li className='li-nav'>
       <Link to="/flash-cards">Flash Cards</Link>
     </li>
 
-    <li>
+    <li className='li-nav'>
       <Link to="/pairs">Pairs</Link>
     </li>
 
-    <li>
+    <li className='li-nav'>
       <Link to="/study-notes">Study Notes</Link>
     </li>
 
-    <li>
+    <li className='li-nav'>
       <Link to="/question-bank">Question Bank</Link>
     </li>
 
