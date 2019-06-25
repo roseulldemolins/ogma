@@ -1,0 +1,60 @@
+#study-notes-form-container{
+  padding: 2rem;
+  position: relative;
+  left: 40%;
+
+}
+
+#study-note-input{
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  text-align: left;
+  outline: none;
+}
+
+#study-note-input:focus{
+  width: 400px;
+}
+
+
+
+
+#submit-study-note{
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 0;
+  outline: none;
+  position:relative;
+  left:7px;
+  bottom:32px;
+
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  border-radius: 4px;
+
+  /* size comes from text & padding (no width/height) */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: #ffffff;
+  background-color: #6E4A63;
+  font-size: 16px;
+
+}
+
+
+#submit-study-note:hover{
+  background-color: #5d4355;
+  outline: none;
+}

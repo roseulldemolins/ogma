@@ -1,15 +1,19 @@
 import React from 'react';
-import './App.css';
 import FlashCardContainer from './containers/FlashCardContainer.js';
-import HomeContainer from './containers/HomeContainer.js';
+import HomeContainer from './components/HomeContainer.js';
 import PairsContainer from './containers/PairsContainer.js';
 import StudyNotesContainer from './containers/StudyNotesContainer.js';
+import QuestionBankContainer from './containers/QuestionBankContainer.js';
 import NavBar from './components/NavBar.js';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
-import './components/NavBar.css';
+// import './components/NavBar.css';
+import './App.css';
+
+
+
 
 class App extends React.Component {
 
@@ -30,6 +34,7 @@ class App extends React.Component {
           />
           <Route path="/pairs" component={PairsContainer} />
           <Route path="/study-notes" component={StudyNotesContainer} />
+          <Route path="/question-bank" component={QuestionBankContainer} />
         </Switch>
         </React.Fragment>
       </Router>
@@ -56,7 +61,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-  questionsData: state
+    questionsData: state
   }
 }
 

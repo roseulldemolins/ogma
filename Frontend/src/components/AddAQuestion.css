@@ -1,0 +1,33 @@
+.add-question-button {
+display: inline-block;
+text-align: center;
+color: #ffffff;
+background-color: #6E4A63;
+border: solid 1px transparent;
+border-radius: 4px;
+padding: 0.5em 1em;
+margin-right: 450px;
+font-family: 'Roboto Slab', serif;
+font-size: 20px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+outline: none;
+height: 50px;
+margin-top: 31px;
+margin-left: 10px;
+}
+
+.add-question-button:hover{
+  background-color: #5d4355;
+}
+
+#form{
+  text-align: center;
+  padding-left: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+}
+.fields{
+  text-align: center;
+}

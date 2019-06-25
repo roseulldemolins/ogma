@@ -1,0 +1,123 @@
+#study-notes-container{
+  background-image: url('../images/cork.png');
+  background-size: cover;
+  height: 1000px;
+
+}
+
+
+
+#study-note-del{
+  position:absolute;
+  top:90%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  border-radius: 4px;
+
+  /* size comes from text & padding (no width/height) */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: #ffffff;
+  background-color: #6E4A63;
+  font-size: 14px;
+}
+
+#study-note-del:hover{
+  background-color: #5d4355;
+  outline: none;
+}
+
+
+
+
+
+
+#study-note-list, .study-note-card{
+  list-style:none;
+}
+
+#study-note-list{
+  overflow:hidden;
+  padding:3em;
+}
+
+#study-note-list .study-note-card {
+
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:17em;
+  width:17em;
+  padding:1em;
+  margin:1.5em;
+  float:left;
+  /* Firefox */
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Tilting the notes */
+  -webkit-transform:rotate(-6deg);
+  -o-transform:rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+  /* Adding smooth transition */
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+
+ #study-note-list .study-note-card:nth-child(even){
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  /* background:#b2b6bf; */
+  background:#dcdee2;
+}
+
+#study-note-list .study-note-card:nth-child(3n){
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  /* background:#b0897b; */
+  background:#d8a897;
+}
+#study-note-list .study-note-card:nth-child(5n){
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+  /* background: #E09F71; */
+  background:#ffb27c;
+}
+
+#study-note-list .study-note-card:hover, #study-note-list .study-note-card:focus{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+
+#study-note-list .study-note-card .study-card-paragraph{
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
+}
