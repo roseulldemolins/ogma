@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import './StudyNotesForm.css'
+import './StudyNotesForm.css';
 
 class StudyNotesForm extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      inputtedText: ""
+      inputtedText: null,
+      defaultText: Date.now()
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
@@ -21,6 +22,7 @@ class StudyNotesForm extends Component {
       topic: "coding" // TODO: hard-coded topic needs updated when multi-topics are introduced
     }
     this.props.addNew(newStudyNote);
+    this.setState({inputtedText: ""});
   }
 
   handleTextChange(evt) {
@@ -31,7 +33,15 @@ class StudyNotesForm extends Component {
     return (
       <div id='study-notes-form-container'>
         <form onSubmit={this.handleFormSubmit} autoComplete='off'>
-          <textarea id='study-note-input' onChange={this.handleTextChange} rows="2" cols="50" placeholder='Type a new study note here...'></textarea>
+          <textarea
+            id='study-note-input'
+            onChange={this.handleTextChange}
+            rows="2" cols="50"
+            value={this.state.inputtedText}
+            placeholder='Type a new study note here...'
+          >
+          {this.state.inputtedText}
+          </textarea>
           <input id='submit-study-note' type='submit' value='Submit Note' />
         </form>
       </div>
