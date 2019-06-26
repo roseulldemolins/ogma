@@ -25,6 +25,10 @@ const NavBar = () => (
     <li className='li-nav'>
       <Link to="/study-notes">Study Notes</Link>
     </li>
+    
+    <li className='li-nav'>
+      <Link to="/multi-choice">Multi Choice</Link>
+    </li>
 
     <li className='li-nav'>
       <Link to="/question-bank">Question Bank</Link>

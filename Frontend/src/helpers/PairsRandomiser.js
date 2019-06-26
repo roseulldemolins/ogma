@@ -4,6 +4,12 @@ const filterQuestionsData = (state) => {
   });
   return getRandomElements(onlyQuestions)
 }
+const filterMultiCData = (state) => {
+  const onlyQuestions = state.filter((question) => {
+    return question.type === "multi_choice";
+  });
+  return getRandomElements(onlyQuestions)
+}
 
 let getRandomElements = function(onlyQuestions) {
   if (!onlyQuestions.length) {

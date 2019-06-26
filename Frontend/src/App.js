@@ -2,6 +2,7 @@ import React from 'react';
 import FlashCardContainer from './containers/FlashCardContainer.js';
 import HomeContainer from './components/HomeContainer.js';
 import PairsContainer from './containers/PairsContainer.js';
+import MultiChoiceContainer from './containers/MultiChoiceContainer.js';
 import StudyNotesContainer from './containers/StudyNotesContainer.js';
 import QuestionBankContainer from './containers/QuestionBankContainer.js';
 import NavBar from './components/NavBar.js';
@@ -33,6 +34,7 @@ class App extends React.Component {
           render={(props) => <FlashCardContainer {...props} randomIndex = {Math.floor(Math.random()*Math.floor(this.props.questionsData.length))}/>}
           />
           <Route path="/pairs" component={PairsContainer} />
+          <Route path="/multi-choice" component={MultiChoiceContainer} />
           <Route path="/study-notes" component={StudyNotesContainer} />
           <Route path="/question-bank" component={QuestionBankContainer} />
         </Switch>
