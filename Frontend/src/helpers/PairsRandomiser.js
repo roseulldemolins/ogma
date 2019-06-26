@@ -1,10 +1,3 @@
-import React, { Component } from 'react';
-import PairsGame from '../components/PairsGame';
-import './PairsContainer.css';
-import { connect } from 'react-redux';
-
-const filterQuestionsDataTest = require('../helpers/PairsRandomiser.js');
-
 const filterQuestionsData = (state) => {
   const onlyQuestions = state.filter((question) => {
     return question.type === "q_and_a";
@@ -45,11 +38,4 @@ const makeQuestionArray = (array) => {
   return questionArray
 }
 
-const mapStateToProps = (state) => {
-  return {
-    QAndA: filterQuestionsDataTest(state)
-  }
-}
-
-
-export default connect(mapStateToProps)(PairsGame)
+module.exports = filterQuestionsData;
