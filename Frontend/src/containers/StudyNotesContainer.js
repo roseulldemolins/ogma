@@ -16,5 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-// export default connect(mapStateToProps)(StudyNotes)
 export default connect(mapStateToProps, mapDispatchToProps)(StudyNotes)
