@@ -15,6 +15,7 @@ class PairsGame extends Component {
       prevCardId: -1,
     }
     this.handleClick = this.handleClick.bind(this)
+    this.restartGame = this.restartGame.bind(this)
   }
 
   makeNewArray () {
