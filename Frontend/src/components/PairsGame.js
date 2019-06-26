@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PairsHeader from '../components/PairsHeader';
 import PairsCard from '../components/PairsCard';
 import PairsGameOver from '../components/PairsGameOver';
-import { connect } from 'react-redux';
 
 const filterQuestionsData = require('../helpers/PairsRandomiser.js');
 
