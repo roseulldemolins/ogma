@@ -1,4 +1,3 @@
-import React from 'react';
 import QuestionBank from '../components/QuestionBank';
 import { connect } from 'react-redux';
 
