@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SubjectFilterContainer from './SubjectFilter.js';
+import SubjectFilterContainer from '../containers/SubjectFilterContainer.js';
 import './NavBar.css';
 
 const NavBar = () => (
