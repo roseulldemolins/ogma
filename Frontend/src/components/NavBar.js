@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SubjectFilterContainer from './SubjectFilter.js';
 import './NavBar.css';
 
 const NavBar = () => (
@@ -31,6 +32,7 @@ const NavBar = () => (
     </li>
 
   </ul>
+  <SubjectFilterContainer />
   </nav>
   </div>
   </header>
