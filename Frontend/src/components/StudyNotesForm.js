@@ -8,7 +8,6 @@ class StudyNotesForm extends Component {
     super(props);
     this.state = {
       inputtedText: null,
-      defaultText: Date.now()
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
