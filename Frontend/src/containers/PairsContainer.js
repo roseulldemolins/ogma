@@ -3,13 +3,13 @@ import PairsGame from '../components/PairsGame';
 import './PairsContainer.css';
 import { connect } from 'react-redux';
 
-const filterQuestionsDataTest = require('../helpers/PairsRandomiser.js');
+const filterQuestionsData = require('../helpers/PairsRandomiser.js');
 
 const mapStateToProps = (state) => {
   return {
-    QAndA: filterQuestionsDataTest(state)
+    QAndA: filterQuestionsData(state),
+    state
   }
 }
-
 
 export default connect(mapStateToProps)(PairsGame)

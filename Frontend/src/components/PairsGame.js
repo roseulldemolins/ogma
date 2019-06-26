@@ -4,28 +4,33 @@ import PairsCard from '../components/PairsCard';
 import PairsGameOver from '../components/PairsGameOver';
 import { connect } from 'react-redux';
 
+const filterQuestionsData = require('../helpers/PairsRandomiser.js');
+
 class PairsGame extends Component {
   constructor(props) {
     super(props)
     this.state = {
       isFlipped: Array(16).fill(false),
-      shuffledCard: this.makeNewArray(),
+      shuffledCard: this.makeNewArray(this.props.QAndA),
       clickCount: 1,
       prevSelectedCard: -1,
       prevCardId: -1,
+      cardsArray: this.props.QAndA
     }
     this.handleClick = this.handleClick.bind(this)
     this.restartGame = this.restartGame.bind(this)
   }
 
-  makeNewArray () {
-    if (!this.props.QAndA) {
+  makeNewArray (array) {
+    if (!array) {
       return [];
       }
     const newArray = [];
-    for (var i = 0; i < this.props.QAndA.length; i++) {
-      newArray.push(this.props.QAndA[i].matchingID)
+    for (var i = 0; i < array.length; i++) {
+      console.log(array[i]);
+      newArray.push(array[i].matchingID)
     }
+    console.log(newArray);
     return newArray
   }
 
@@ -77,12 +82,14 @@ class PairsGame extends Component {
   };
 
   restartGame () {
+    const newCardSet = filterQuestionsData(this.props.state)
     this.setState({
       isFlipped: Array(16).fill(false),
-      shuffledCard: this.makeNewArray(),
+      shuffledCard: this.makeNewArray(newCardSet),
       clickCount: 1,
       prevSelectedCard: -1,
-      prevCardId: -1
+      prevCardId: -1,
+      cardsArray: newCardSet
     });
   };
 
@@ -104,7 +111,7 @@ class PairsGame extends Component {
                 cardNumber={matchingID}
                 isFlipped={this.state.isFlipped[index]}
                 handleClick={this.handleClick}
-                QAndA={this.props.QAndA[index].text}
+                QAndA={this.state.cardsArray[index].text}
               />
             )
           }
