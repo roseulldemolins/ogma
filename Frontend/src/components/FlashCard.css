@@ -72,6 +72,33 @@ margin-top: 30px;
   background-color: #5d4355;
 }
 
+.answer-button {
+  align-items: flex-end;
+  display: inline-block;
+  text-align: center;
+  width:150px;
+  color: #ffffff;
+  background-color: #6E4A63;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  margin-right: 50px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  outline: none;
+  margin-top: 30px;
+}
+
+.answer-button:hover{
+  background-color: #5d4355;
+}
+
+.answer-buttons{
+  text-align: right;
+  padding-right: 230px;
+  padding-top: 100px;
+}
 .modal-header{
   background-color: #E09F71;
   font-family: 'Uncial Antiqua', cursive;
