@@ -1,4 +1,3 @@
-import React from 'react';
 import StudyNotes from '../components/StudyNotes';
 import { connect } from 'react-redux';
 
