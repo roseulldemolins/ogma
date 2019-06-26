@@ -24,7 +24,7 @@ const PairsHeader = ({ restartGame }) => (
     <div
       className="modal fade"
       id="flashcardsModal"
-      tabindex="-1"
+      tabIndex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true">
