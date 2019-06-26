@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import PairsGame from '../components/PairsGame';
 import './PairsContainer.css';
 import { connect } from 'react-redux';
