@@ -6,7 +6,7 @@ import './QuestionBank.css'
 const QuestionBank = (props) => {
 
   const questionBankList = props.questions.filter((question) => {
-    return question.type == "q_and_a"
+    return question.type === "q_and_a"
   });
 
   return (
