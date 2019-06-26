@@ -35,10 +35,18 @@ class FlashCard extends React.Component {
 
   handleRightAnswerClick(){
     console.log('got it');
+    this.setState({
+      isFlipped: false,
+      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
+    })
   }
 
   handleWrongAnswerClcik(){
     console.log('havent got it');
+    this.setState({
+      isFlipped: false,
+      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
+    })
   }
 
   render() {
