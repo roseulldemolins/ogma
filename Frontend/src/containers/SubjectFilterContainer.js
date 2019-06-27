@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    questions: state
+    questions: state,
+    options:
   }
 };
 

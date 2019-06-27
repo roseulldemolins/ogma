@@ -1,9 +1,9 @@
-const questionsReducer = (state = [], action) => {
+const questionsReducer = (state = {questions: [], options: []}, action) => {
   switch (action.type) {
     case 'LOAD_QUESTIONS_DATA':
-      return [...state, ...action.questionsData]
+      return {...state, [...state.questions, ...action.questionsData]}
     case 'ADD_QUESTION':
-      return [action.newQuestion, ...state]
+      return {...state, [action.newQuestion, ...state.questions]}
     case 'ADD_NEW_STUDY_NOTE':
       return [...state, action.newStudyNote]
     case 'DELETE_NOTE':
