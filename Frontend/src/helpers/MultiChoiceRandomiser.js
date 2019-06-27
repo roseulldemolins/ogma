@@ -1,6 +1,7 @@
-const filterQuestionsData = (state) => {
+
+const filterMultiCData = (state) => {
   const onlyQuestions = state.filter((question) => {
-    return question.type === "q_and_a";
+    return question.type === "multi_choice";
   });
   return getRandomElements(onlyQuestions)
 }
@@ -38,4 +39,4 @@ const makeQuestionArray = (array) => {
   return questionArray
 }
 
-module.exports = filterQuestionsData;
+module.exports = filterMultiCData;

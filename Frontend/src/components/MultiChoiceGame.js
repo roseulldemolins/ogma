@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import MultiCHeader from '../components/MultiCHeader';
+import MultiChoiceHeader from '../components/MultiChoiceHeader';
 import MultiCCard from '../components/MultiCCard';
 import MultiCGameOver from '../components/MultiCGameOver';
 import { connect } from 'react-redux';
 
-const filterQuestionsData = require('../helpers/PairsRandomiser.js');
+const filterQuestionsData = require('../helpers/MultiChoiceRandomiser.js');
 
-class PairsGame extends Component {
+class MultiChoiceGame extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -100,12 +100,12 @@ class PairsGame extends Component {
   render() {
     return (
      <div className="game">
-       <MultiCHeader restartGame={this.restartGame} />
-       { this.isGameOver() ? <PairsGameOver restartGame={this.restartGame} /> :
+       <MultiChoiceHeader restartGame={this.restartGame} />
+       { this.isGameOver() ? <MultiCGameOver restartGame={this.restartGame} /> :
        <div className="grid-container">
           {
             this.state.shuffledCard.map((matchingID, index) =>
-              <PairsCard
+              <MultiCCard
                 key={index}
                 id={index}
                 cardNumber={matchingID}
