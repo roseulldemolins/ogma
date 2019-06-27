@@ -2,10 +2,7 @@
   background-image: url('../images/cork.png');
   background-size: cover;
   height: 1000px;
-
 }
-
-
 
 #study-note-del{
   position:absolute;
@@ -35,18 +32,13 @@
   outline: none;
 }
 
-
-
-
-
-
 #study-note-list, .study-note-card{
   list-style:none;
 }
 
 #study-note-list{
   overflow:hidden;
-  padding:3em;
+  padding:6em;
 }
 
 #study-note-list .study-note-card {
