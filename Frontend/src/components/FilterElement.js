@@ -11,14 +11,12 @@ class FilterElement extends Component{
   }
 
   handleClick(){
-    console.log('handleClick');
     if(this.state.tickBox === 'x'){
-      console.log('if condition met');
       this.setState({tickBox: '√'})
     } else{
-      console.log('condition not met');
       this.setState({tickBox: 'x'})
     }
+    this.props.handleCheck(this.props.index)
   }
 
   render() {
