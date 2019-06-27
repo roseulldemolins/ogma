@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import FilterList from './FilterList.js';
 
 class SubjectFilter extends Component {
   constructor(props){
     super(props)
     this.state = {
       questions: this.filterTopics(this.props.questions),
+      display: null
     }
 
-    this.display = this.display.bind(this)
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -33,19 +34,21 @@ class SubjectFilter extends Component {
   }
 
   handleClick(){
-
-  }
-
-  display(){
-    if(!this.questions) {
-      return <button onClick={this.handleClick}>Subjects</button>
+    if(!this.state.display){
+      this.setState({display:
+        <FilterList
+        questions = {this.state.questions}
+        />})
+    } else {
+      this.setState({display: null})
     }
   }
 
   render(){
     return(
       <div>
-        {this.display()}
+        <button onClick={this.handleClick}>Subjects</button>
+        {this.state.display}
       </div>
     )
   }
