@@ -35,22 +35,17 @@ class FlashCard extends React.Component {
   };
 
   handleRightAnswerClick(){
-    if(this.props.cardLearned = true){
-
-      this.setState({
-        isFlipped: false,
-        randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
-      })
-    }
+    this.setState({
+      isFlipped: false,
+      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
+    })
   }
 
   handleWrongAnswerClcik(){
-    if(this.props.learned = false){
-      this.setState({
-        isFlipped: false,
-        randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
-      })
-    }
+    this.setState({
+      isFlipped: false,
+      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
+    })
   }
 
   render() {
@@ -63,18 +58,17 @@ class FlashCard extends React.Component {
       return (
         <div id='flash-card-container'>
           <div className="flipcard">
-          <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical" flipSpeedBackToFront={0.20} flipSpeedFrontToBack={0.20}>
-            <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
-              <p className='subtopic'>{this.props.questionList[index].sub_topic}</p>
-              <p className='text'>{this.props.questionList[index].question_text}</p>
-            </div>
-            <div id='back' key="back" value={index} onClick={this.handleFlipClick}>
-              <p className='subtopic'>{this.props.questionList[index].sub_topic}</p>
-              <p className='text'>{this.props.questionList[index].answer_text}</p>
-            </div>
-          </ReactCardFlip>
-
-        </div>
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical" flipSpeedBackToFront={0.20} flipSpeedFrontToBack={0.20}>
+              <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
+                <p className='subtopic'>{this.props.questionList[index].sub_topic}</p>
+                <p className='text'>{this.props.questionList[index].question_text}</p>
+              </div>
+              <div id='back' key="back" value={index} onClick={this.handleFlipClick}>
+                <p className='subtopic'>{this.props.questionList[index].sub_topic}</p>
+                <p className='text'>{this.props.questionList[index].answer_text}</p>
+              </div>
+            </ReactCardFlip>
+          </div>
         <div className="flashcard-buttons">
           <button aria-label="new-button" className="flashcard-button" onClick={this.handleNewCardClick}>New card</button>
           <button aria-label="instructions-button" className="flashcard-button" type="button" data-toggle="modal" data-target="#flashcardsModal">Instructions</button>
