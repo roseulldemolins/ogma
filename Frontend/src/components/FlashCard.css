@@ -8,10 +8,13 @@
   width: 500px;
   font-family: 'Coming Soon', cursive;
   font-size: 25px;
-  margin-left: 75%;
-  margin-top: 90px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(25%, -40%);
 }
 
 p{
@@ -37,7 +40,7 @@ p{
   height: 100vh;
 }
 
-/* .flipcard{
+.flipcard{
   text-align: center;
   align-items: center;
   position: absolute;
@@ -45,7 +48,8 @@ p{
   top: 50%;
   transform: translate(-50%, -50%);
 
-} */
+
+}
 
 button{
   outline:none !important;
@@ -95,9 +99,14 @@ margin-top: 30px;
 }
 
 .answer-buttons{
-  text-align: right;
+  /* text-align: right;
   padding-right: 230px;
-  padding-top: 100px;
+  padding-top: 100px; */
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(50%, 230%);
 }
 .modal-header{
   background-color: #E09F71;
