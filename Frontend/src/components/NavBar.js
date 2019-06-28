@@ -16,6 +16,10 @@ const NavBar = () => (
     </h4>
     <ul id='nav-ul'>
     <li className='li-nav'>
+      <SubjectFilterContainer />
+    </li>
+
+    <li className='li-nav'>
       <Link to="/flash-cards">Flash Cards</Link>
     </li>
 
@@ -31,8 +35,8 @@ const NavBar = () => (
       <Link to="/question-bank">Question Bank</Link>
     </li>
 
+
   </ul>
-  <SubjectFilterContainer />
   </nav>
   </div>
   </header>

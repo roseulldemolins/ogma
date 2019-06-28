@@ -5,12 +5,20 @@ class FilterList extends Component {
   constructor(props){
     super(props)
     this.state = {
-      tickedArray: Array(this.props.questions.length).fill(false)
+      tickedArray: this.determineStartConditions(this.props.questions)
     }
 
     this.options = this.options.bind(this)
     this.selectAll = this.selectAll.bind(this)
     this.deselectAll = this.deselectAll.bind(this)
+  }
+
+  determineStartConditions(array){
+    if(!array.length){
+      return Array(array.length).fill(true)
+    } return array.map((element) => {
+      return Boolean(element)
+    })
   }
 
   options(){
@@ -20,6 +28,7 @@ class FilterList extends Component {
       handleCheck= {this.handleCheck}
       key= {index}
       index= {index}
+      tickerArray= {this.state.tickedArray}
       />
     })
   }

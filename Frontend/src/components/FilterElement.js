@@ -10,6 +10,12 @@ class FilterElement extends Component{
     this.handleClick = this.handleClick.bind(this)
   }
 
+  determineCheck() {
+    if(this.props.tickedArray[this.props.index]){
+      return '√'
+    } return 'x'
+  }
+
   handleClick(){
     if(this.state.tickBox === 'x'){
       this.setState({tickBox: '√'})
