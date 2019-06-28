@@ -9,18 +9,10 @@ router.get("/", function(req, res) {
   });
 });
 
-
 /* Create a new question/topic */
 router.post("/", function(req, res) {
   MongoHelper.create("questions", req.body).then(results => {
     res.status(201).json(results.insertedId);
-  });
-});
-
-/* Update a question */
-router.put("/:id", function(req, res) {
-  MongoHelper.update("questions", req.params.id, req.body).then(results => {
-    res.status(200).json("Question updated");
   });
 });
 
@@ -31,6 +23,14 @@ router.delete("/:id", function(req, res) {
   });
 });
 
+/* Update a learned marker on questions */
+router.put("/:id", function(req, res) {
+  MongoHelper.updateLearnedMark("learned", req.params.id, req.body).then(results => {
+    MongoHelper.get("questions").then(results => {
+      res.status(200).json(results);
+    });
+  });
+});
 
 // /* Add new comment */
 // router.post("/:post_id/comments", function(req, res) {

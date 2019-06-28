@@ -20,8 +20,29 @@ const generateRndIndx = (state) => {
 const mapStateToProps = (state) => {
   return {
     questionList: filterQuestionsData(state),
-    randomIndex: generateRndIndx(state)
+    randomIndex: generateRndIndx(state),
+    cardLearned: state
   }
 }
 
-export default connect(mapStateToProps)(FlashCard)
+const mapDispatchToProps = dispatch => ({
+  updateLearnedMark(id) {
+      dispatch(() => {
+        fetch(`http://localhost:3000/questions/${id}`, {
+          method: 'PUT',
+          body: JSON.stringify(id),
+          headers: { 'Content-Type': 'application/json'}
+        }
+        )
+        .then(res => res.json())
+        .then(cardLearned => {
+          dispatch({
+            type: 'LOAD_QUESTIONS_DATA',
+            cardLearned: cardLearned
+          })
+        })
+      })
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(FlashCard)

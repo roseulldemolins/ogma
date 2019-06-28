@@ -37,7 +37,7 @@ p{
   height: 100vh;
 }
 
-.flipcard{
+/* .flipcard{
   text-align: center;
   align-items: center;
   position: absolute;
@@ -45,7 +45,7 @@ p{
   top: 50%;
   transform: translate(-50%, -50%);
 
-}
+} */
 
 button{
   outline:none !important;
