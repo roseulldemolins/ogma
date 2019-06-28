@@ -11,7 +11,9 @@ const QuestionBank = (props) => {
 
   return (
     <div id='question-bank-container'>
-    <AddAQuestion addQuestion={props.addQuestion}/>
+    <AddAQuestion
+      addQuestion={props.addQuestion}
+    />
     <QuestionBankDisplay questionBankList={questionBankList}/>
     </div>
   );

@@ -1,6 +1,8 @@
 import QuestionBank from '../components/QuestionBank';
 import { connect } from 'react-redux';
 
+const filteringMechanism = require('../helpers/FilteringMechanism.js');
+
 const mapStateToProps = (state) => {
   return {
     questions: state.questions
