@@ -51,8 +51,12 @@ const mapDispatchToProps = (dispatch) => {
         .then(questionsData => {
           dispatch({
             type: 'LOAD_QUESTIONS_DATA',
-            questionsData: questionsData
-          });
+            questionsData
+          })
+          dispatch({
+            type: 'UPDATE_FILTER',
+            filterArray: ['CSS']
+          })
         })
       })
     }
