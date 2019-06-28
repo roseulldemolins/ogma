@@ -5,7 +5,7 @@ class FilterList extends Component {
   constructor(props){
     super(props)
     this.state = {
-      tickedArray: this.determineStartConditions(this.props.questions)
+      tickedArray: this.determineStartConditions(this.props.options)
     }
 
     this.options = this.options.bind(this)
@@ -16,9 +16,9 @@ class FilterList extends Component {
 
   determineStartConditions(array){
     if(!array.length){
-      return Array(array.length).fill(true)
+      return Array(this.props.questions.length).fill(true)
     } return array.map((element) => {
-      return Boolean(element)
+        return Boolean(element)
     })
   }
 
@@ -53,7 +53,13 @@ class FilterList extends Component {
   }
 
   submit = () => {
-    
+    const convertedArray = this.props.questions.map((element, index) => {
+      if(this.state.tickedArray[index]){
+        return element
+      } else {return false}
+    })
+    console.log(convertedArray);
+    this.props.updateFilter(convertedArray)
   }
 
  render(){

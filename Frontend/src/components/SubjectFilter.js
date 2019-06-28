@@ -38,6 +38,8 @@ class SubjectFilter extends Component {
       this.setState({display:
         <FilterList
         questions = {this.state.questions}
+        options = {this.props.options}
+        updateFilter = {this.props.updateFilter}
         />})
     } else {
       this.setState({display: null})
