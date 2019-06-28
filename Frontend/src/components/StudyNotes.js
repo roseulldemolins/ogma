@@ -6,7 +6,7 @@ import './StudyNote.css'
 const StudyNotes = (props) => {
 
   const studyNoteList = props.questions.filter((question) => {
-  return question.type == "study_note"
+  return question.type === "study_note"
   });
 
   return (

@@ -1,10 +1,9 @@
-import React from 'react';
 import StudyNotes from '../components/StudyNotes';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    questions: state
+    questions: state.questions
   }
 };
 
@@ -17,5 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-// export default connect(mapStateToProps)(StudyNotes)
 export default connect(mapStateToProps, mapDispatchToProps)(StudyNotes)

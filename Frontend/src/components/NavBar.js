@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SubjectFilterContainer from '../containers/SubjectFilterContainer.js';
 import './NavBar.css';
 
 const NavBar = () => (
@@ -14,6 +15,10 @@ const NavBar = () => (
 
     </h4>
     <ul id='nav-ul'>
+    <li className='li-nav'>
+      <SubjectFilterContainer />
+    </li>
+
     <li className='li-nav'>
       <Link to="/flash-cards">Flash Cards</Link>
     </li>
@@ -34,6 +39,7 @@ const NavBar = () => (
     <li className='li-nav'>
       <Link to="/question-bank">Question Bank</Link>
     </li>
+
 
   </ul>
   </nav>

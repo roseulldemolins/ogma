@@ -1,10 +1,9 @@
-import React from 'react';
 import QuestionBank from '../components/QuestionBank';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    questions: state
+    questions: state.questions
   }
 };
 

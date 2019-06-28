@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PairsHeader from '../components/PairsHeader';
 import PairsCard from '../components/PairsCard';
 import PairsGameOver from '../components/PairsGameOver';
-import { connect } from 'react-redux';
 
 const filterQuestionsData = require('../helpers/PairsRandomiser.js');
 
@@ -27,10 +26,8 @@ class PairsGame extends Component {
       }
     const newArray = [];
     for (var i = 0; i < array.length; i++) {
-      console.log(array[i]);
       newArray.push(array[i].matchingID)
     }
-    console.log(newArray);
     return newArray
   }
 

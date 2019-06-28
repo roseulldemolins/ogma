@@ -11,6 +11,8 @@ class FlashCard extends React.Component {
     };
     this.handleFlipClick = this.handleFlipClick.bind(this);
     this.handleNewCardClick = this.handleNewCardClick.bind(this);
+    this.handleRightAnswerClick = this.handleRightAnswerClick.bind(this);
+    this.handleWrongAnswerClcik = this.handleWrongAnswerClcik.bind(this);
   }
 
   handleNewCardClick(event) {
@@ -30,6 +32,14 @@ class FlashCard extends React.Component {
       this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
     }
   };
+
+  handleRightAnswerClick(){
+    console.log('got it');
+  }
+
+  handleWrongAnswerClcik(){
+    console.log('havent got it');
+  }
 
   render() {
     if (!this.props.questionList.length) {
@@ -51,12 +61,13 @@ class FlashCard extends React.Component {
               <p className='text'>{this.props.questionList[index].answer_text}</p>
             </div>
           </ReactCardFlip>
+
         </div>
         <div className="flashcard-buttons">
           <button aria-label="new-button" className="flashcard-button" onClick={this.handleNewCardClick}>New card</button>
           <button aria-label="instructions-button" className="flashcard-button" type="button" data-toggle="modal" data-target="#flashcardsModal">Instructions</button>
         </div>
-        <div className="modal fade" id="flashcardsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="flashcardsModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
@@ -71,6 +82,10 @@ class FlashCard extends React.Component {
     </div>
   </div>
 </div>
+  <div className='answer-buttons'>
+    <button onClick={this.handleRightAnswerClick} className='answer-button'>&#10004;</button>
+    <button onClick={this.handleWrongAnswerClcik} className='answer-button'>&#x2718;</button>
+  </div>
 </div>
       )
   }
