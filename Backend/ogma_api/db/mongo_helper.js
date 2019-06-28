@@ -47,7 +47,20 @@ class MongoHelper {
       return collection.updateOne({ _id: ObjectID(id) }, { $set: payload });
     });
   }
-  // 
+
+  static updateLearnedMark(coll, id, payload) {
+    // Updating mark on flash cards to learned
+    return MongoClient.connect(
+      HOST,
+      { useNewUrlParser: true }
+    ).then(client => {
+      const collection = client.db(DB_NAME).collection(coll);
+      return collection.updateOne(
+        { _id: ObjectID(id) },
+        { $set: payload });
+    });
+  }
+  //
   // static addComment(coll, id, payload) {
   //   // Connect using the connection string
   //   return MongoClient.connect(

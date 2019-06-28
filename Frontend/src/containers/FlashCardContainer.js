@@ -1,4 +1,3 @@
-// import React from 'react';
 import FlashCard from '../components/FlashCard.js'
 import { connect } from 'react-redux';
 import './FlashCardContainer.css';
@@ -25,4 +24,24 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(FlashCard)
+const mapDispatchToProps = dispatch => ({
+  updateLearnedMark(id) {
+      dispatch(() => {
+        fetch(`http://localhost:3000/questions/${id}`, {
+          method: 'PUT',
+          body: JSON.stringify(id),
+          headers: { 'Content-Type': 'application/json'}
+        }
+        )
+        .then(res => res.json())
+        .then(cardLearned => {
+          dispatch({
+            type: 'LOAD_QUESTIONS_DATA',
+            cardLearned: cardLearned
+          })
+        })
+      })
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(FlashCard)
