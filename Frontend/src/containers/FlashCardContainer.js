@@ -2,6 +2,8 @@ import FlashCard from '../components/FlashCard.js'
 import { connect } from 'react-redux';
 import './FlashCardContainer.css';
 
+const selectedQuestions =  require('../helpers/SelectedQuestions.js');
+
 const filterQuestionsData = (state) => {
   const onlyQuestions = state.filter((question) => {
     return question.type === "q_and_a";
@@ -19,8 +21,8 @@ const generateRndIndx = (state) => {
 
 const mapStateToProps = (state) => {
   return {
-    questionList: filterQuestionsData(state.questions),
-    randomIndex: generateRndIndx(state.questions)
+    questionList: selectedQuestions(filterQuestionsData(state.questions), state.options),
+    randomIndex: generateRndIndx(selectedQuestions(state.questions, state.options))
   }
 }
 

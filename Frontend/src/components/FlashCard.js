@@ -54,6 +54,7 @@ class FlashCard extends React.Component {
   }
 
   render() {
+    console.log(this.props.questionList);
     if (!this.props.questionList.length) {
         return (
           <div>Loading</div>
