@@ -38,6 +38,7 @@ class StudyNotesForm extends Component {
             rows="2" cols="50"
             value={this.state.inputtedText}
             placeholder='Type a new study note here...'
+            required
           >
           {this.state.inputtedText}
           </textarea>
