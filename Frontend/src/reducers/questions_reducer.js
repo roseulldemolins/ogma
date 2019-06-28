@@ -8,7 +8,7 @@ const questionsReducer = (state = {questions: [], options: []}, action) => {
     case 'ADD_NEW_STUDY_NOTE':
       return {...state, questions: [...state.questions, action.newStudyNote]}
     case 'UPDATE_FILTER':
-      return {...state, options: [action.filterArray]}
+      return {...state, options: [...action.filterArray]}
     case 'DELETE_NOTE':
       const newState = {...state, questions: []};
       state.forEach((note) => {
