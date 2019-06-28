@@ -1,13 +1,14 @@
 const questionsReducer = (state = {questions: [], options: []}, action) => {
   switch (action.type) {
     case 'LOAD_QUESTIONS_DATA':
-      return {...state, [...state.questions, ...action.questionsData]}
+      const questionLoad = {...state, questions: [...state.questions, ...action.questionsData]}
+      return questionLoad
     case 'ADD_QUESTION':
-      return {...state, [action.newQuestion, ...state.questions]}
+      return {...state, questions: [action.newQuestion, ...state.questions]}
     case 'ADD_NEW_STUDY_NOTE':
-      return [...state, action.newStudyNote]
+      return {...state, questions: [...state.questions, action.newStudyNote]}
     case 'DELETE_NOTE':
-      const newState = [];
+      const newState = {...state, questions: []};
       state.forEach((note) => {
         if(note._id !== action.id){
           newState.push(note)
