@@ -8,5 +8,13 @@ const mapStateToProps = (state) => {
   }
 };
 
+const mapDispatchToProps = (dispatch) => ({
+  updateFilter(filterArray) {
+    dispatch({
+      type: 'UPDATE_FILTER',
+      filterArray
+    })
+  }
+})
 
-export default connect(mapStateToProps)(SubjectFilter)
+export default connect(mapStateToProps, mapDispatchToProps)(SubjectFilter)

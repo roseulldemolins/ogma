@@ -11,6 +11,7 @@ class FilterList extends Component {
     this.options = this.options.bind(this)
     this.selectAll = this.selectAll.bind(this)
     this.deselectAll = this.deselectAll.bind(this)
+    this.submit = this.submit.bind(this)
   }
 
   determineStartConditions(array){
@@ -28,7 +29,7 @@ class FilterList extends Component {
       handleCheck= {this.handleCheck}
       key= {index}
       index= {index}
-      tickerArray= {this.state.tickedArray}
+      tickedArray= {this.state.tickedArray}
       />
     })
   }
@@ -51,13 +52,17 @@ class FilterList extends Component {
     })
   }
 
+  submit = () => {
+    
+  }
+
  render(){
    return(
      <div className= "filter-container">
      {this.options()}
      <div onClick= {this.selectAll}>Select All </div>
      <div onClick= {this.deselectAll}>Deselect All </div>
-     <div>Submit</div>
+     <div onClick= {this.submit}>Submit</div>
      </div>
    )
  }

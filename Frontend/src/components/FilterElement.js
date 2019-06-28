@@ -4,10 +4,17 @@ class FilterElement extends Component{
   constructor(props){
     super(props)
     this.state = {
-      tickBox: 'x'
+      tickBox: this.determineCheck()
     }
 
     this.handleClick = this.handleClick.bind(this)
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.tickedArray !== prevProps.tickedArray)
+    this.setState({
+      tickBox: this.determineCheck()
+    })
   }
 
   determineCheck() {
