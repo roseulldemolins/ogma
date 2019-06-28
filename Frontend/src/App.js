@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import './components/NavBar.css';
 import './App.css';
 
-
+const filteringMechanism = require('./helpers/FilteringMechanism.js');
 
 
 class App extends React.Component {
@@ -55,7 +55,7 @@ const mapDispatchToProps = (dispatch) => {
           })
           dispatch({
             type: 'UPDATE_FILTER',
-            filterArray: ['CSS']
+            filterArray: filteringMechanism(questionsData)
           })
         })
       })
