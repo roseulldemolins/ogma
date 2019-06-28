@@ -40,6 +40,7 @@ class SubjectFilter extends Component {
         questions = {this.state.questions}
         options = {this.props.options}
         updateFilter = {this.props.updateFilter}
+        closeWindow = {this.handleClick}
         />})
     } else {
       this.setState({display: null})

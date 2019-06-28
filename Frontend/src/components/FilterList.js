@@ -5,7 +5,8 @@ class FilterList extends Component {
   constructor(props){
     super(props)
     this.state = {
-      tickedArray: this.determineStartConditions(this.props.options)
+      tickedArray: this.determineStartConditions(this.props.options),
+      error: false
     }
 
     this.options = this.options.bind(this)
@@ -34,6 +35,11 @@ class FilterList extends Component {
     })
   }
 
+  nothingCheckedError(){
+    if(this.state.error)
+    return <div>You Must Select At Least One Sub-Topic</div>
+  }
+
   handleCheck = (index) => {
     this.setState({
       tickedArray: [...this.state.tickedArray.slice(0,index), !this.state.tickedArray[index], ...this.state.tickedArray.slice(index+1)]
@@ -53,13 +59,21 @@ class FilterList extends Component {
   }
 
   submit = () => {
-    const convertedArray = this.props.questions.map((element, index) => {
-      if(this.state.tickedArray[index]){
-        return element
-      } else {return false}
+    const checkTicks = this.state.tickedArray.findIndex((element) => {
+      return element
     })
-    console.log(convertedArray);
-    this.props.updateFilter(convertedArray)
+    if(checkTicks !== -1){
+      const convertedArray = this.props.questions.map((element, index) => {
+        if(this.state.tickedArray[index]){
+          return element
+        } else {return false}
+      })
+      this.setState({error: false})
+      this.props.updateFilter(convertedArray)
+      this.props.closeWindow()
+    } else {
+      this.setState({error: true})
+    }
   }
 
  render(){
@@ -69,6 +83,7 @@ class FilterList extends Component {
      <div onClick= {this.selectAll}>Select All </div>
      <div onClick= {this.deselectAll}>Deselect All </div>
      <div onClick= {this.submit}>Submit</div>
+     {this.nothingCheckedError()}
      </div>
    )
  }
