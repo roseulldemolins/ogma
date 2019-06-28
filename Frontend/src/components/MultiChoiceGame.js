@@ -97,24 +97,33 @@ class MultiChoiceGame extends Component {
     return this.state.isFlipped.every((element, index, array) => element !== false);
   };
 
+
+//----------
+//  to go after grid-container
+// {
+//   this.state.shuffledCard.map((matchingID, index) =>
+//     <MultiCCard
+//       key={index}
+//       id={index}
+//       cardNumber={matchingID}
+//       isFlipped={this.state.isFlipped[index]}
+//       handleClick={this.handleClick}
+//       MultiC={this.state.cardsArray[index].text}
+//     />
+//   )
+// }
+
+
+
+
+
   render() {
     return (
      <div className="game">
        <MultiChoiceHeader restartGame={this.restartGame} />
        { this.isGameOver() ? <MultiCGameOver restartGame={this.restartGame} /> :
        <div className="grid-container">
-          {
-            this.state.shuffledCard.map((matchingID, index) =>
-              <MultiCCard
-                key={index}
-                id={index}
-                cardNumber={matchingID}
-                isFlipped={this.state.isFlipped[index]}
-                handleClick={this.handleClick}
-                MultiC={this.state.cardsArray[index].text}
-              />
-            )
-          }
+
         </div>
        }
      </div>

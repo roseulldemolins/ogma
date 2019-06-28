@@ -34,8 +34,8 @@ class App extends React.Component {
           render={(props) => <FlashCardContainer {...props} randomIndex = {Math.floor(Math.random()*Math.floor(this.props.questionsData.length))}/>}
           />
           <Route path="/pairs" component={PairsContainer} />
-          <Route path="/multi-choice" component={MultiChoiceContainer} />
           <Route path="/study-notes" component={StudyNotesContainer} />
+          <Route path="/multi-choice" component={MultiChoiceContainer} />
           <Route path="/question-bank" component={QuestionBankContainer} />
         </Switch>
         </React.Fragment>

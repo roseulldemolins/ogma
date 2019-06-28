@@ -203,6 +203,26 @@ db.questions.insertMany([
   sub_topic:"Programming",
   type:"q_and_a",
   topic:"coding"
+},
+{
+  question_text:"What is HTML? £A: Hyper text markup language£B:Hot text markup language£C:Hotel Trad Middle Link",
+  answer_text:"A:Hyper text markup language",
+  sub_topic:"Programming",
+  type:"multi_choice",
+  topic:"coding"
+},
+{
+  question_text:"What is CSS £A: Comfy Stylish Slippers£B:Cascading Style Sheets£C:Cascading Stylish Sheets",
+  answer_text:"B:Cascading Style Sheets",
+  sub_topic:"Programming",
+  type:"multi_choice",
+  topic:"coding"
+},
+{
+  question_text:"What is JavaScript £A: Web programming language£B:Mainframe computer language£C:Low level machine language",
+  answer_text:"A: Web programming language",
+  sub_topic:"Programming",
+  type:"multi_choice",
+  topic:"coding"
 }
-
 ])
