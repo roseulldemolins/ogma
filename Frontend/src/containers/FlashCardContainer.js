@@ -19,9 +19,8 @@ const generateRndIndx = (state) => {
 
 const mapStateToProps = (state) => {
   return {
-    questionList: filterQuestionsData(state),
-    randomIndex: generateRndIndx(state),
-    cardLearned: state
+    questionList: filterQuestionsData(state.questions),
+    randomIndex: generateRndIndx(state.questions)
   }
 }
 

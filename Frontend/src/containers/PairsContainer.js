@@ -6,8 +6,8 @@ const filterQuestionsData = require('../helpers/PairsRandomiser.js');
 
 const mapStateToProps = (state) => {
   return {
-    QAndA: filterQuestionsData(state),
-    state
+    QAndA: filterQuestionsData(state.questions),
+    state: state.questions
   }
 }
 
