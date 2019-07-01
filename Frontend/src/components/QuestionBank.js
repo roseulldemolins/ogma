@@ -1,23 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AddAQuestion from './AddAQuestion';
 import QuestionBankDisplay from './QuestionBankDisplay';
 import './QuestionBank.css'
 
-const QuestionBank = (props) => {
+class QuestionBank extends Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      questionBankList: this.getQuestionBank()
+    }
+  }
 
-  const questionBankList = props.questions.filter((question) => {
-    return question.type === "q_and_a"
-  });
+  componentDidUpdate(prevProps) {
+    if(this.props.questions !== prevProps.questions)
+    this.setState({
+      questionBankList: this.getQuestionBank()
+    })
+  }
 
-  return (
-    <div id='question-bank-container'>
-    <AddAQuestion
-      addQuestion={props.addQuestion}
-    />
-    <QuestionBankDisplay questionBankList={questionBankList}/>
-    </div>
-  );
+  getQuestionBank(){
+    return this.props.questions.filter((question) => {
+      return question.type === "q_and_a"
+    })
+  }
 
+  render(){
+    return(
+      <div id='question-bank-container'>
+        <AddAQuestion
+        addQuestion={this.props.addQuestion}
+        />
+        <QuestionBankDisplay questionBankList={this.state.questionBankList}/>
+      </div>
+    )
+  }
 }
 
 export default QuestionBank;

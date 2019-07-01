@@ -10,10 +10,21 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addQuestion(newQuestion) {
-    dispatch({
-      type: 'ADD_QUESTION',
-      newQuestion: newQuestion
+  addQuestion(data) {
+    dispatch(() => {
+      fetch('http://localhost:3000/questions', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json'}
+      }
+      )
+      .then(res => res.json())
+      .then(questionsData => {
+        dispatch({
+          type: 'LOAD_QUESTIONS_DATA',
+          questionsData
+        })
+      })
     })
   }
 })

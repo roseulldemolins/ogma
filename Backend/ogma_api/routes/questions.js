@@ -12,7 +12,9 @@ router.get("/", function(req, res) {
 /* Create a new question/topic */
 router.post("/", function(req, res) {
   MongoHelper.create("questions", req.body).then(results => {
-    res.status(201).json(results.insertedId);
+    MongoHelper.get("questions").then(data => {
+      res.status(200).json(data);
+    });
   });
 });
 
@@ -31,14 +33,5 @@ router.put("/:id", function(req, res) {
     });
   });
 });
-
-// /* Add new comment */
-// router.post("/:post_id/comments", function(req, res) {
-//   MongoHelper.addComment("posts", req.params.post_id, req.body).then(
-//     results => {
-//       res.status(201).json("New comment created");
-//     }
-//   );
-// });
 
 module.exports = router;
