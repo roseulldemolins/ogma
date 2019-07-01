@@ -14,10 +14,10 @@ const NavBar = () => (
             <i id='book-icon' className="fab fa-leanpub"></i>
           </Link>
         </h4>
+        <div className='filter'>
+          <SubjectFilterContainer />
+        </div>
         <ul id='nav-ul'>
-          <li className='li-nav'>
-            <SubjectFilterContainer />
-          </li>
           <li className='li-nav'>
             <Link to="/flash-cards">Flash Cards</Link>
           </li>

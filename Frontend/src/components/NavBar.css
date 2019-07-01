@@ -67,11 +67,13 @@ nav ul{
 }
 
 nav ul li{
+  position: absolute;
   list-style: none;
   transform: translateX(100rem);
   animation: slideIn .5s forwards;
   position: relative;
   left: 19rem;
+  right: 100%;
 }
 
 nav ul li:nth-child(1){
@@ -88,6 +90,10 @@ nav ul li:nth-child(3){
 
 nav ul li:nth-child(4){
   animation-delay: 1.5s;
+}
+
+nav ul li:nth-child(5){
+  animation-delay: 2s;
 }
 
 nav ul li a{
@@ -155,4 +161,8 @@ body{
 .splash-header {
   display: flex;
   justify-content: center;
+}
+
+.filter{
+
 }

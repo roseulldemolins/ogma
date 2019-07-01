@@ -1,0 +1,38 @@
+.subTopics{
+  position: absolute;
+  text-decoration: none;
+  color: #F6F8F6;
+
+}
+
+.subTopics:hover{
+  text-decoration: none;
+  color: #F6F8F6;
+}
+
+
+.subFilter{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-family: 'Uncial Antiqua', cursive;
+  }
+
+
+@keyframes slideIn {
+  from{
+
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+body{
+  background-size: cover;
+  overflow-x: hidden;
+}

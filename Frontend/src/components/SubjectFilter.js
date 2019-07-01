@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FilterList from './FilterList.js';
+import './SubjectFilter.css'
 
 const filteringMechanism = require('../helpers/FilteringMechanism.js');
 
@@ -41,8 +42,8 @@ class SubjectFilter extends Component {
 
   render(){
     return(
-      <div>
-        <button onClick={this.handleClick}>Subjects</button>
+      <div className= "subFilter">
+        <div className="subTopics" onClick={this.handleClick}>Sub Topics</div>
         {this.state.display}
       </div>
     )
