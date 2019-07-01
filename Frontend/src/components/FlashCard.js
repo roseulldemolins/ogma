@@ -8,12 +8,13 @@ class FlashCard extends React.Component {
     this.state = {
       isFlipped: false,
       randomIndex: null,
+      cardLearned: false
 
     };
     this.handleFlipClick = this.handleFlipClick.bind(this);
     this.handleNewCardClick = this.handleNewCardClick.bind(this);
-    this.handleRightAnswerClick = this.handleRightAnswerClick.bind(this);
-    this.handleWrongAnswerClcik = this.handleWrongAnswerClcik.bind(this);
+    this.handleLearnedClick = this.handleLearnedClick.bind(this);
+    this.handleNotLearnedClick = this.handleNotLearnedClick.bind(this);
   }
 
   handleNewCardClick(event) {
@@ -34,14 +35,17 @@ class FlashCard extends React.Component {
     }
   };
 
-  handleRightAnswerClick(){
-    this.setState({
-      isFlipped: false,
-      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
-    })
+  handleLearnedClick(){
+    const currentCard = this.state.randomIndex || this.props.randomIndex
+    this.props.updateLearnedMark((this.props.questionList[currentCard]._id));
+      this.setState({
+        isFlipped: false,
+        randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
+      })
+
   }
 
-  handleWrongAnswerClcik(){
+  handleNotLearnedClick(){
     this.setState({
       isFlipped: false,
       randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
@@ -89,8 +93,8 @@ class FlashCard extends React.Component {
   </div>
 </div>
   <div className='answer-buttons'>
-    <button onClick={this.handleRightAnswerClick} className='answer-button'>&#10004;</button>
-    <button onClick={this.handleWrongAnswerClcik} className='answer-button'>&#x2718;</button>
+    <button onClick={this.handleLearnedClick} className='answer-button1'>✔</button>
+    <button onClick={this.handleNotLearnedClick} className='answer-button2'>✘</button>
   </div>
 </div>
       )

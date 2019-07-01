@@ -22,24 +22,26 @@ const generateRndIndx = (state) => {
 const mapStateToProps = (state) => {
   return {
     questionList: selectedQuestions(filterQuestionsData(state.questions), state.options),
-    randomIndex: generateRndIndx(selectedQuestions(state.questions, state.options))
+    randomIndex: generateRndIndx(selectedQuestions(state.questions, state.options)),
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   updateLearnedMark(id) {
+    let isLearned = {learned: true}
       dispatch(() => {
         fetch(`http://localhost:3000/questions/${id}`, {
           method: 'PUT',
-          body: JSON.stringify(id),
+          body: JSON.stringify(isLearned),
           headers: { 'Content-Type': 'application/json'}
         }
         )
         .then(res => res.json())
-        .then(cardLearned => {
+        .then(questionsData => {
+          console.log(questionsData);
           dispatch({
             type: 'LOAD_QUESTIONS_DATA',
-            cardLearned: cardLearned
+            questionsData
           })
         })
       })

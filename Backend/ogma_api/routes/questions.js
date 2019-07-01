@@ -25,7 +25,7 @@ router.delete("/:id", function(req, res) {
 
 /* Update a learned marker on questions */
 router.put("/:id", function(req, res) {
-  MongoHelper.updateLearnedMark("learned", req.params.id, req.body).then(results => {
+  MongoHelper.updateLearnedMark("questions", req.params.id, req.body).then(results => {
     MongoHelper.get("questions").then(results => {
       res.status(200).json(results);
     });
