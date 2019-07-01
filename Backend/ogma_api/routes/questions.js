@@ -12,8 +12,8 @@ router.get("/", function(req, res) {
 /* Create a new question/topic */
 router.post("/", function(req, res) {
   MongoHelper.create("questions", req.body).then(results => {
-    MongoHelper.get("questions").then(results => {
-      res.status(200).json(results);
+    MongoHelper.get("questions").then(data => {
+      res.status(200).json(data);
     });
   });
 });
@@ -28,8 +28,8 @@ router.delete("/:id", function(req, res) {
 /* Update a learned marker on questions */
 router.put("/:id", function(req, res) {
   MongoHelper.updateLearnedMark("learned", req.params.id, req.body).then(results => {
-    MongoHelper.get("questions").then(data => {
-      res.status(200).json(data);
+    MongoHelper.get("questions").then(results => {
+      res.status(200).json(results);
     });
   });
 });
