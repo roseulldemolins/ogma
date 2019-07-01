@@ -38,7 +38,7 @@ class FilterList extends Component {
 
   nothingCheckedError(){
     if(this.state.error)
-    return <div>You Must Select At Least One Sub-Topic</div>
+    return <div className='error'>You Must Select <br></br>At Least  One Sub-Topic</div>
   }
 
   handleCheck = (index) => {
