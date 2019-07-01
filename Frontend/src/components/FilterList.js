@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FilterElement from './FilterElement.js';
+import './FilterList.css';
 
 class FilterList extends Component {
   constructor(props){
