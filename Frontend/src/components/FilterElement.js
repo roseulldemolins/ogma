@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './FilterElement.css';
 
 class FilterElement extends Component{
   constructor(props){
@@ -34,9 +35,9 @@ class FilterElement extends Component{
 
   render() {
     return(
-      <div>
-      <div onClick= {this.handleClick}>{this.props.option}</div>
-      <div onClick= {this.handleClick}>{this.state.tickBox}</div>
+      <div className= "element-container">
+        <div className= "info" onClick= {this.handleClick}>{this.props.option}</div>
+        <div className= "check" onClick= {this.handleClick}>{this.state.tickBox}</div>
       </div>
     )
   }

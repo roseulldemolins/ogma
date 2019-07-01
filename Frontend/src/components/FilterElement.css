@@ -1,0 +1,22 @@
+.element-container{
+  z-index: 9999;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 250px;
+  cursor: pointer;
+}
+
+.element-container:hover{
+  text-decoration: none;
+  color: #F6F8F6;
+}
+
+.info{
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.check{
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
