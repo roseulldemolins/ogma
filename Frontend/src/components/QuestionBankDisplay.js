@@ -6,16 +6,16 @@ const QuestionBankDisplay = (props) => {
 
   const listOfQuestions = props.questionBankList.map((questionItem, i) => {
     return <QuestionCard
-    questionItem={questionItem}
-    key={i}
-    index={i}
+      questionItem={questionItem}
+      key={i}
+      index={i}
     />
   })
 
   return(
       <div className="ui six cards" id="cards">
-    {listOfQuestions}
-    </div>
+        {listOfQuestions}
+      </div>
   )
 }
 
