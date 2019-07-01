@@ -10,6 +10,7 @@
   left: 26.4%;
   color: #6E4A63;
   padding: 10px;
+
 }
 
 .form-buttons{
@@ -19,4 +20,9 @@
 .form-buttons:hover{
   text-decoration: none;
   color: #F6F8F6;
+}
+
+.error{
+  color: red;
+  font-size: 17px;
 }
