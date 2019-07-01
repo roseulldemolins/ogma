@@ -81,9 +81,9 @@ class FilterList extends Component {
    return(
      <div className= "filter-container">
      {this.options()}
-     <div onClick= {this.selectAll}>Select All </div>
-     <div onClick= {this.deselectAll}>Deselect All </div>
-     <div onClick= {this.submit}>Submit</div>
+     <div className= "form-buttons" onClick= {this.selectAll}>Select All </div>
+     <div className= "form-buttons" onClick= {this.deselectAll}>Deselect All </div>
+     <div className= "form-buttons" onClick= {this.submit}>Submit</div>
      {this.nothingCheckedError()}
      </div>
    )
