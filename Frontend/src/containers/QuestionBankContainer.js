@@ -24,6 +24,10 @@ const mapDispatchToProps = (dispatch) => ({
           type: 'LOAD_QUESTIONS_DATA',
           questionsData
         })
+        dispatch({
+          type: 'UPDATE_FILTER',
+          filterArray: filteringMechanism(questionsData)
+          })
       })
     })
   }
