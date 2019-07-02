@@ -6,16 +6,17 @@ const selectedQuestions =  require('../helpers/SelectedQuestions.js');
 
 const filterQuestionsData = (state) => {
   const onlyQuestions = state.filter((question) => {
-    return question.type === "q_and_a" && question.learned === true;
+    return question.type === "q_and_a"
   });
-  return onlyQuestions
+  const onlyNotLearned = onlyQuestions.filter((question) => {
+    return question.learned === false
+  })
+  return onlyNotLearned
+
 }
 
 const generateRndIndx = (state) => {
-  const onlyQuestions = state.filter((question) => {
-    return question.type === "q_and_a";
-  });
-  const randomised = Math.floor(Math.random()*Math.floor(onlyQuestions.length));
+  const randomised = Math.floor(Math.random()*Math.floor(filterQuestionsData(state).length));
   return randomised
 }
 
@@ -38,9 +39,7 @@ const mapDispatchToProps = dispatch => ({
         )
         .then(res => res.json())
         .then(questionsData => {
-          console.log(questionsData);
           dispatch({
-
             type: 'LOAD_QUESTIONS_DATA',
             questionsData
           })

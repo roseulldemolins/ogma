@@ -28,11 +28,11 @@ class FlashCard extends React.Component {
   handleLearnedClick(){
     const currentCard = this.state.randomIndex || this.props.randomIndex
     this.props.updateLearnedMark((this.props.questionList[currentCard]._id));
+    console.log(this.props.questionList);
       this.setState({
         isFlipped: false,
         randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
       })
-
   }
 
   handleNotLearnedClick(){
