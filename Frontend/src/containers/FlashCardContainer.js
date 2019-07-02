@@ -6,7 +6,7 @@ const selectedQuestions =  require('../helpers/SelectedQuestions.js');
 
 const filterQuestionsData = (state) => {
   const onlyQuestions = state.filter((question) => {
-    return question.type === "q_and_a";
+    return question.type === "q_and_a" && question.learned === true;
   });
   return onlyQuestions
 }
@@ -40,6 +40,7 @@ const mapDispatchToProps = dispatch => ({
         .then(questionsData => {
           console.log(questionsData);
           dispatch({
+
             type: 'LOAD_QUESTIONS_DATA',
             questionsData
           })
