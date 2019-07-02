@@ -21,7 +21,9 @@ router.post("/", function(req, res) {
 /* Delete a question */
 router.delete("/:id", function(req, res) {
   MongoHelper.delete("questions", req.params.id).then(results => {
-    res.status(204).json("Question removed");
+    MongoHelper.get("questions").then(data => {
+      res.status(200).json(data);
+    });
   });
 });
 

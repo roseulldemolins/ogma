@@ -3,7 +3,6 @@ import './PairsContainer.css';
 import { connect } from 'react-redux';
 
 const filterQuestionsData = require('../helpers/PairsRandomiser.js');
-const selectedQuestions =  require('../helpers/SelectedQuestions.js');
 
 const mapStateToProps = (state) => {
   return {

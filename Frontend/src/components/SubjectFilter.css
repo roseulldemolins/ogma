@@ -3,6 +3,7 @@
   text-decoration: none;
   color: #6E4A63;
   cursor: pointer;
+  z-index: 9990
 }
 
 .subTopics:hover{

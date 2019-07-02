@@ -10,7 +10,7 @@
   left: 26.4%;
   color: #6E4A63;
   padding: 10px;
-
+  z-index: 9995;
 }
 
 .form-buttons{
