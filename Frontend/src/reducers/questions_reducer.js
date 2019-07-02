@@ -1,7 +1,7 @@
 const questionsReducer = (state = {questions: [], options: []}, action) => {
   switch (action.type) {
     case 'LOAD_QUESTIONS_DATA':
-      const questionLoad = {...state, questions: [...state.questions, ...action.questionsData]}
+      const questionLoad = {...state, questions: [...action.questionsData]}
       return questionLoad
     case 'ADD_QUESTION':
       return {...state, questions: [action.newQuestion, ...state.questions]}
