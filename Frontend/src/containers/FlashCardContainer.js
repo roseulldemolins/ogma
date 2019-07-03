@@ -12,7 +12,6 @@ const filterQuestionsData = (state) => {
     return question.learned === false
   })
   return onlyNotLearned
-
 }
 
 const generateRndIndx = (state) => {

@@ -26,13 +26,13 @@ class FlashCard extends React.Component {
   };
 
   handleLearnedClick(){
-    const currentCard = this.state.randomIndex || this.props.randomIndex
-    this.props.updateLearnedMark((this.props.questionList[currentCard]._id));
-    console.log(this.props.questionList);
-      this.setState({
-        isFlipped: false,
-        randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
-      })
+    const currentCard = this.props.randomIndex
+    console.log(currentCard);
+    console.log('question list on click', this.props.questionList);
+        this.props.updateLearnedMark((this.props.questionList[currentCard]._id));
+          this.setState({
+            isFlipped: false
+          })
   }
 
   handleNotLearnedClick(){
@@ -45,10 +45,12 @@ class FlashCard extends React.Component {
   render() {
     if (!this.props.questionList.length) {
         return (
-          <div>Loading</div>
+          <div className='all-card-learned'>Loading</div>
         )
       }
     const index = this.state.randomIndex || this.props.randomIndex
+    console.log(this.props.questionList);
+    console.log(this.props.questionList[index]);
       return (
         <div id='flash-card-container'>
           <div className="flipcard">

@@ -2,7 +2,10 @@ const filterQuestionsData = (state) => {
   const onlyQuestions = state.filter((question) => {
     return question.type === "q_and_a";
   });
-  return getRandomElements(onlyQuestions)
+  const onlyNotLearned = onlyQuestions.filter((question) => {
+    return question.learned === false
+  });
+  return getRandomElements(onlyNotLearned)
 }
 
 let getRandomElements = function(onlyQuestions) {
