@@ -43,30 +43,3 @@ const makeQuestionArray = (array) => {
 }
 
 module.exports = filterQuestionsData;
-
-const testArray = [
-  {
-    _id: "5d134a076f2b8a45cf172d91",
-    study_note_text: "Note to self - add more study notes",
-    type: "study_note",
-    topic: "coding"
-  },
-  {
-    _id: "5d134a076f2b8a45cf172d96",
-    question_text: "What does TDD stand for?",
-    answer_text: "Test Driven Development",
-    sub_topic: "Programming",
-    type: "q_and_a",
-    topic: "coding"
-    },
-  {
-    "_id": "5d134a076f2b8a45cf172d97",
-    question_text: "What does HTML stand for?",
-    answer_text: "Hypertext Markup Language",
-    sub_topic: "HTML",
-    type: "q_and_a",
-    topic: "coding"
-  }
-]
-
-console.log(filterQuestionsData(testArray));
