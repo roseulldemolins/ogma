@@ -6,11 +6,15 @@ const filterQuestionsData = (state) => {
 }
 
 let getRandomElements = function(onlyQuestions) {
+  let pairLength = 8;
   if (!onlyQuestions.length) {
       return;
     }
+  if(onlyQuestions.length < pairLength){
+    pairLength = onlyQuestions.length
+  }
   let results = [];
-  while (results.length < 8) {
+  while (results.length < pairLength) {
     let newNumber = Math.floor(Math.random()*onlyQuestions.length);
     if (results.indexOf(onlyQuestions[newNumber]) < 0) {
       results.push(onlyQuestions[newNumber]);
