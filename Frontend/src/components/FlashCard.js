@@ -7,21 +7,12 @@ class FlashCard extends React.Component {
     super(props);
     this.state = {
       isFlipped: false,
-      randomIndex: null,
+      randomIndex: null
 
     };
     this.handleFlipClick = this.handleFlipClick.bind(this);
-    this.handleNewCardClick = this.handleNewCardClick.bind(this);
-    this.handleRightAnswerClick = this.handleRightAnswerClick.bind(this);
-    this.handleWrongAnswerClcik = this.handleWrongAnswerClcik.bind(this);
-  }
-
-  handleNewCardClick(event) {
-    event.preventDefault();
-    this.setState({
-      isFlipped: false,
-      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
-    })
+    this.handleLearnedClick = this.handleLearnedClick.bind(this);
+    this.handleNotLearnedClick = this.handleNotLearnedClick.bind(this);
   }
 
   handleFlipClick(event) {
@@ -34,14 +25,17 @@ class FlashCard extends React.Component {
     }
   };
 
-  handleRightAnswerClick(){
-    this.setState({
-      isFlipped: false,
-      randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
-    })
+  handleLearnedClick(){
+    const currentCard = this.props.randomIndex
+    console.log(currentCard);
+    console.log('question list on click', this.props.questionList);
+        this.props.updateLearnedMark((this.props.questionList[currentCard]._id));
+          this.setState({
+            isFlipped: false
+          })
   }
 
-  handleWrongAnswerClcik(){
+  handleNotLearnedClick(){
     this.setState({
       isFlipped: false,
       randomIndex: Math.floor(Math.random()*Math.floor(this.props.questionList.length))
@@ -51,10 +45,12 @@ class FlashCard extends React.Component {
   render() {
     if (!this.props.questionList.length) {
         return (
-          <div>Loading</div>
+          <div className='all-card-learned'>Loading</div>
         )
       }
     const index = this.state.randomIndex || this.props.randomIndex
+    console.log(this.props.questionList);
+    console.log(this.props.questionList[index]);
       return (
         <div id='flash-card-container'>
           <div className="flipcard">
@@ -70,7 +66,6 @@ class FlashCard extends React.Component {
             </ReactCardFlip>
           </div>
         <div className="flashcard-buttons">
-          <button aria-label="new-button" className="flashcard-button" onClick={this.handleNewCardClick}>New card</button>
           <button aria-label="instructions-button" className="flashcard-button" type="button" data-toggle="modal" data-target="#flashcardsModal">Instructions</button>
         </div>
         <div className="modal fade" id="flashcardsModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -83,14 +78,19 @@ class FlashCard extends React.Component {
         </button>
       </div>
       <div className="modal-body">
-        Here you can view all of your questions from the bank on index cards. First, read the question on the front of the card and try to answer it. Once you think you have the answer you can click on the index card to flip it and reveal the answer, simply click the card again if you want to see the question. If you're confident you know it you can click 'New Card' to try and get the next one.
+        Here you can view all of your questions from the bank on index cards.<br></br>
+        First, read the question on the front of the card and try to answer it.
+        Once you think you have the answer you can click on the index card to flip it and reveal the answer,
+        simply click the card again if you want to see the question. <br></br> If you're confident you know it you can click
+        '✔' to remove the card from the deck and get the next one. You can also click on '✘' if you feel you haven't
+        learned the card yet, this button will also get the next card.
       </div>
     </div>
   </div>
 </div>
   <div className='answer-buttons'>
-    <button onClick={this.handleRightAnswerClick} className='answer-button'>&#10004;</button>
-    <button onClick={this.handleWrongAnswerClcik} className='answer-button'>&#x2718;</button>
+    <button onClick={this.handleLearnedClick} className='answer-button1'>✔</button>
+    <button onClick={this.handleNotLearnedClick} className='answer-button2'>✘</button>
   </div>
 </div>
       )
