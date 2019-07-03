@@ -70,6 +70,7 @@ class FilterList extends Component {
         } else {return false}
       })
       this.setState({error: false})
+      console.log(convertedArray);
       this.props.updateFilter(convertedArray)
       this.props.closeWindow()
     } else {

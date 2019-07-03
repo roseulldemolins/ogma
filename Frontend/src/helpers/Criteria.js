@@ -4,9 +4,9 @@ const criteria = (originalArray, newArray) => {
     if(originalArray.findIndex((e) => {
       return e === element
     }) < 0){
-      resultArray.push(false);
+      resultArray = [...resultArray, false]
     } else{
-      resultArray.push(element);
+      resultArray = [...resultArray, element]
     }
   })
   return resultArray;
