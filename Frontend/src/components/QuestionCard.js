@@ -8,6 +8,14 @@ const QuestionCard = (props) => {
     props.deleteQuestion(props.questionItem._id);
   }
 
+  const learnedQuestion = () => {
+    if (props.questionItem.learned === true){
+      return '✔';
+    }else{
+      return '✘';
+    }
+  }
+
   return(
         <div className="card">
           <div className="content">
@@ -15,6 +23,7 @@ const QuestionCard = (props) => {
             <div className="description">
               <p className='q-card-q-text'>Q: {props.questionItem.question_text}</p>
               <p className='q-card-a-text'>A: {props.questionItem.answer_text}</p>
+              <p className='q-card-learned'>Learned: {learnedQuestion()}</p>
             </div>
           </div>
           <button onClick={handleDelete} id='question-card-del'>Remove Question</button>
