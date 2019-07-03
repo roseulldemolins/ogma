@@ -9,7 +9,7 @@ class PairsGame extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isFlipped: Array(16).fill(false),
+      isFlipped: Array(this.makeNewArray(this.props.QAndA).length).fill(false),
       shuffledCard: this.makeNewArray(this.props.QAndA),
       clickCount: 1,
       prevSelectedCard: -1,
