@@ -21,13 +21,12 @@ margin-left: 10px;
 }
 
 #form{
-  text-align: center;
-  padding-left: 400px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
   font-family: 'Roboto Slab', serif;
   font-size: 20px;
 }
 .fields{
   text-align: center;
+  width: 900px;
 }
