@@ -9,7 +9,7 @@
   border-color: black;
   padding: 0.5em 1em;
   font-family: 'Roboto Slab', serif;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.10);
 }
 
 .btn-primary:hover{
@@ -32,22 +32,17 @@
 
 .learned{
   color: #228B22;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .not-learned{
   color: 	#B22222;
-  font-size: 15px;
+  font-size: 20px;
 }
 
-.learned-buttons{
-  padding-top: 9px;
-  padding-bottom: 9px;
-  display: flex;
-  flex-direction: row;
-  flex-flow: row;
-  justify-content: space-around;
-
+#learned-button{
+  display: inline-flex;
+  font-size: 13px;
 }
 
 .content{
