@@ -60,11 +60,10 @@ const mapDispatchToProps = (dispatch) => {
           headers: { 'Content-Type': 'application/json' }
         })
         .then(res => res.json())
-        .then(response => {
-          newStudyNote._id = response;
+        .then(questionsData => {
           dispatch({
-            type: 'ADD_NEW_STUDY_NOTE',
-            newStudyNote: newStudyNote
+            type: 'LOAD_QUESTIONS_DATA',
+            questionsData
           });
         })
       })
