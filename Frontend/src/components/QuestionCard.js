@@ -35,7 +35,8 @@ const QuestionCard = (props) => {
             </div>
           </div>
             <div className='learned-buttons'>
-              <button onClick={handleLearnedClick} className='btn btn-primary' id='learned-button'>Learned? {learnedQuestion()}</button>
+              <button onClick={handleLearnedClick} className='btn btn-primary' id='learned-button'>Learned? </button>
+              {learnedQuestion()}
             </div>
           <button onClick={handleDelete} className='btn btn-primary'>Remove Question</button>
         </div>

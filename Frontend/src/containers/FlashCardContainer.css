@@ -1,4 +1,5 @@
 .flash-card-container{
+  background-repeat: repeat-y;
   background-image: url('../images/desk-bg.jpg');
   background-size: cover;
 }
