@@ -32,10 +32,24 @@
 
 .learned{
   color: #228B22;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .not-learned{
   color: #FF0000;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+.learned-buttons{
+  padding-top: 9px;
+  padding-bottom: 9px;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  justify-content: space-around;
+
+}
+
+.content{
+  overflow-y: scroll;
 }

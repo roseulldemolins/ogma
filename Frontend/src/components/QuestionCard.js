@@ -16,6 +16,11 @@ const QuestionCard = (props) => {
     }
   }
 
+  const handleLearnedClick = () => {
+    props.updateLearnedMark(props.questionItem._id)
+    console.log(props.questionItem.learned);
+  }
+
   return(
         <div className="card">
           <div className="content">
@@ -24,9 +29,11 @@ const QuestionCard = (props) => {
             <div className="description">
               <div className='q-card-q-text'>Q: {props.questionItem.question_text}</div>
               <div className='q-card-a-text'>A: {props.questionItem.answer_text}</div>
-              <div className='q-card-learned'>Learned: {learnedQuestion()}</div>
             </div>
           </div>
+            <div className='learned-buttons'>
+              <button onClick={handleLearnedClick} className='btn btn-primary' id='learned-button'>Learned? {learnedQuestion()}</button>
+            </div>
           <button onClick={handleDelete} className='btn btn-primary'>Remove Question</button>
         </div>
   )
@@ -49,6 +56,25 @@ const mapDispatchToProps = (dispatch) => {
 
         })
       })
+    },
+    updateLearnedMark(id) {
+      let isLearned = {learned: true}
+        dispatch(() => {
+          fetch(`http://localhost:3000/questions/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(isLearned),
+            headers: { 'Content-Type': 'application/json'}
+          }
+          )
+          .then(res => res.json())
+          .then(questionsData => {
+            console.log(questionsData);
+            dispatch({
+              type: 'LOAD_QUESTIONS_DATA',
+              questionsData
+            })
+          })
+        })
     }
   }
 }
