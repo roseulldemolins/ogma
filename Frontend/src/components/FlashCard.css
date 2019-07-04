@@ -34,7 +34,7 @@ p{
     line-height: 45px;
 }
 
-#flash-card-container{
+.flash-card-container{
   background-color: #6E4A63;
   width: 100vw;
   height: 100vh;
@@ -47,8 +47,6 @@ p{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-
 }
 
 button{
@@ -147,4 +145,12 @@ margin-top: 30px;
   font-family: 'Roboto Slab', serif;
   color: #ffffff;
   font-size: 16px;
+}
+
+.gameover{
+  color: #ffffff;
+  font-size: 50px;
+  font-family: 'Uncial Antiqua', serif;
+  text-align: center;
+  padding-top: 160px;
 }
