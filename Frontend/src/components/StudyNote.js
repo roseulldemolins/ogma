@@ -24,10 +24,11 @@ const mapDispatchToProps = (dispatch) => {
         fetch(`http://localhost:3000/questions/${id}`, {
           method: 'delete'
         })
-        .then(() =>{
+        .then(res => res.json())
+        .then((questionsData) =>{
           dispatch({
-            type: 'DELETE_NOTE',
-            id: id
+            type: 'LOAD_QUESTIONS_DATA',
+            questionsData
           })
 
         })
