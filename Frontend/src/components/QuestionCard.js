@@ -17,7 +17,11 @@ const QuestionCard = (props) => {
   }
 
   const handleLearnedClick = () => {
+    if(props.questionItem.learned === true){
+      props.updateNotLearnedMark(props.questionItem._id)
+    }else{
     props.updateLearnedMark(props.questionItem._id)
+  }
   }
 
   return(
@@ -86,6 +90,7 @@ const mapDispatchToProps = (dispatch) => {
           )
           .then(res => res.json())
           .then(questionsData => {
+            console.log(questionsData);
             dispatch({
               type: 'LOAD_QUESTIONS_DATA',
               questionsData
