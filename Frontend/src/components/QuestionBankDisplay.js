@@ -13,7 +13,7 @@ const QuestionBankDisplay = (props) => {
   })
 
   return(
-      <div className="ui six cards" id="cards">
+      <div className="ui stackable five cards" id="cards">
         {listOfQuestions}
       </div>
   )
