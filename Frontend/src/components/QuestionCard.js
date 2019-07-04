@@ -20,8 +20,8 @@ const QuestionCard = (props) => {
     if(props.questionItem.learned === true){
       props.updateNotLearnedMark(props.questionItem._id)
     }else{
-    props.updateLearnedMark(props.questionItem._id)
-  }
+      props.updateLearnedMark(props.questionItem._id)
+    }
   }
 
   return(
