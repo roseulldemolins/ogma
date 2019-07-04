@@ -1,24 +1,41 @@
-#question-card-del{
-display: inline-block;
-text-align: center;
-width:229px;
-color: #ffffff;
-background-color: #6E4A63;
-border: solid 1px transparent;
-border-radius: 4px;
-padding: 0.5em 1em;
-margin-right: 50px;
-font-family: 'Roboto Slab', serif;
-font-size: 16px;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-outline: none;
-margin-top: 30px;
+.btn-primary{
+  font-size: 16px;
+  display: inline-block;
+  text-align: center;
+  background-color: #6E4A63;
+  color: #ffffff;
+  border: solid 1px;
+  border-radius: 4px;
+  border-color: black;
+  padding: 0.5em 1em;
+  font-family: 'Roboto Slab', serif;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#question-card-del:hover{
+.btn-primary:hover{
   background-color: #5d4355;
+  border-color: black;
 }
 
 .header{
   font-family: 'Roboto Slab', serif !important;
+}
+
+.divider{
+  height: 1px;
+  width:100%;
+  display:block;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #6E4A63;
+}
+
+.learned{
+  color: #228B22;
+  font-size: 20px;
+}
+
+.not-learned{
+  color: #FF0000;
+  font-size: 20px;
 }

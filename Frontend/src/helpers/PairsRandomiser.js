@@ -8,19 +8,19 @@ const filterQuestionsData = (state) => {
   return getRandomElements(onlyNotLearned)
 }
 
-let getRandomElements = function(onlyQuestions) {
+let getRandomElements = function(onlyNotQuestions) {
   let pairLength = 8;
-  if (!onlyQuestions.length) {
+  if (!onlyNotQuestions.length) {
       return;
     }
-  if(onlyQuestions.length < pairLength){
-    pairLength = onlyQuestions.length
+  if(onlyNotQuestions.length < pairLength){
+    pairLength = onlyNotQuestions.length
   }
   let results = [];
   while (results.length < pairLength) {
-    let newNumber = Math.floor(Math.random()*onlyQuestions.length);
-    if (results.indexOf(onlyQuestions[newNumber]) < 0) {
-      results.push(onlyQuestions[newNumber]);
+    let newNumber = Math.floor(Math.random()*onlyNotQuestions.length);
+    if (results.indexOf(onlyNotQuestions[newNumber]) < 0) {
+      results.push(onlyNotQuestions[newNumber]);
     }
   }
   const answerArray = makeAnswerArray(results);

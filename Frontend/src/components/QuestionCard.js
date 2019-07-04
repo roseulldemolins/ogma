@@ -8,16 +8,26 @@ const QuestionCard = (props) => {
     props.deleteQuestion(props.questionItem._id);
   }
 
+  const learnedQuestion = () => {
+    if (props.questionItem.learned === true){
+      return <div className='learned'>✔</div>;
+    }else{
+      return <div className='not-learned'>✘</div>;
+    }
+  }
+
   return(
         <div className="card">
           <div className="content">
               <div className="header">{props.questionItem.sub_topic}</div>
+              <div className='divider'></div>
             <div className="description">
-              <p className='q-card-q-text'>Q: {props.questionItem.question_text}</p>
-              <p className='q-card-a-text'>A: {props.questionItem.answer_text}</p>
+              <div className='q-card-q-text'>Q: {props.questionItem.question_text}</div>
+              <div className='q-card-a-text'>A: {props.questionItem.answer_text}</div>
+              <div className='q-card-learned'>Learned: {learnedQuestion()}</div>
             </div>
           </div>
-          <button onClick={handleDelete} id='question-card-del'>Remove Question</button>
+          <button onClick={handleDelete} className='btn btn-primary'>Remove Question</button>
         </div>
   )
 
