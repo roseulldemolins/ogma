@@ -18,7 +18,6 @@ const QuestionCard = (props) => {
 
   const handleLearnedClick = () => {
     props.updateLearnedMark(props.questionItem._id)
-    console.log(props.questionItem.learned);
   }
 
   return(
@@ -69,6 +68,24 @@ const mapDispatchToProps = (dispatch) => {
           .then(res => res.json())
           .then(questionsData => {
             console.log(questionsData);
+            dispatch({
+              type: 'LOAD_QUESTIONS_DATA',
+              questionsData
+            })
+          })
+        })
+    },
+    updateNotLearnedMark(id) {
+      let isNotLearned = {learned: false}
+        dispatch(() => {
+          fetch(`http://localhost:3000/questions/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(isNotLearned),
+            headers: { 'Content-Type': 'application/json'}
+          }
+          )
+          .then(res => res.json())
+          .then(questionsData => {
             dispatch({
               type: 'LOAD_QUESTIONS_DATA',
               questionsData
