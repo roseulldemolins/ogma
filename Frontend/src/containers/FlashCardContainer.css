@@ -1,4 +1,4 @@
-#flash-card-container{
+.flash-card-container{
   background-image: url('../images/desk-bg.jpg');
   background-size: cover;
 }

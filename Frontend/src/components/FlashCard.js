@@ -43,12 +43,14 @@ class FlashCard extends React.Component {
   render() {
     if (!this.props.questionList.length) {
       return (
-        <h1>Yaaaay! <br></br> You've learned every card :)</h1>
+        <div className='flash-card-container'>
+          <div className='gameover'>Yaaaay! <br></br> You've learned every card :)</div>
+        </div>
       )
     }
     const index = this.state.randomIndex || this.props.randomIndex
       return (
-        <div id='flash-card-container'>
+        <div className='flash-card-container'>
           <div className="flipcard">
             <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical" flipSpeedBackToFront={0.20} flipSpeedFrontToBack={0.20}>
               <div id='front' key="front" value={index} onClick={this.handleFlipClick}>
