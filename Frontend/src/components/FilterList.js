@@ -80,11 +80,13 @@ class FilterList extends Component {
  render(){
    return(
      <div className= "filter-container">
-     {this.options()}
-     <div className= "form-buttons" onClick= {this.selectAll}>Select All </div>
-     <div className= "form-buttons" onClick= {this.deselectAll}>Deselect All </div>
-     <div className= "form-buttons" onClick= {this.submit}>Submit</div>
-     {this.nothingCheckedError()}
+       {this.options()}
+       <div className='divider'></div>
+        <div className= "form-buttons" onClick= {this.selectAll}>Select All </div>
+        <div className= "form-buttons" onClick= {this.deselectAll}>Deselect All </div>
+       <div className='divider'></div>
+        <div className= "form-buttons" onClick= {this.submit}>Submit</div>
+        {this.nothingCheckedError()}
      </div>
    )
  }
