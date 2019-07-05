@@ -72,7 +72,6 @@ const mapDispatchToProps = (dispatch) => {
           )
           .then(res => res.json())
           .then(questionsData => {
-            console.log(questionsData);
             dispatch({
               type: 'LOAD_QUESTIONS_DATA',
               questionsData
@@ -91,7 +90,6 @@ const mapDispatchToProps = (dispatch) => {
           )
           .then(res => res.json())
           .then(questionsData => {
-            console.log(questionsData);
             dispatch({
               type: 'LOAD_QUESTIONS_DATA',
               questionsData
